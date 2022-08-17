@@ -276,7 +276,7 @@ form button:hover {
   text-transform: capitalize;
 }
 
-.active-tab {
+.tab-list .active-tab {
   background-color: #E90152;
 }
 
