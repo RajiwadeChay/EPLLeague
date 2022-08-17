@@ -44,17 +44,20 @@
             <div class="tab-content show">
               <h3>sign in to existing account</h3>
               <!--sign in form start here-->
-              <form action="#FIXME" method="post" name="signInForm">
+              <form action="#FIXME" method="post" name="signInForm"
+              class="sign-in-form">
                 <div class="email">
                   <label for="email">email address : </label>
                   <input type="email" id="email" name="email" placeholder="Enter your email address">
+                  <span class="err-span">error</span>
                 </div>
                 <div class="pswd">
                   <label for="pswd">password : </label>
-                  <input type="password" id="pswd" name="pswd" placeholder="Enter your password">
+                  <input type="password" id="pswd" name="pswd" placeholder="Enter your password" autocomplete="off">
+                  <span class="err-span">error</span>
                 </div>
-                <div class="sign-in-btn">
-                  <button type="submit">sign in</button>
+                <div>
+                  <button type="submit" class="sign-in-btn">sign in</button>
                 </div>
                 <div class="remember-me-checkbox">
                   <label>
@@ -70,7 +73,7 @@
             <div class="tab-content">
               <h3>sign up to create new account</h3>
               <!--sign up form start here-->
-              <form action="#FIXME" method="post" name="sign-up-form">
+              <form action="#FIXME" method="post" name="signUpForm" class="sign-up-form">
                 <div class="first-name">
                   <label for="fName">first name : </label>
                   <input type="text" id="fName" name="fName" placeholder="Enter your first name">
@@ -85,7 +88,7 @@
                 </div>
                 <div class="pswd">
                   <label for="newPswd">new password : </label>
-                  <input type="password" id="newPswd" name="newPswd" placeholder="Enter your new password">
+                  <input type="password" id="newPswd" name="newPswd" placeholder="Enter your new password" autocomplete="off">
                 </div>
                 <div class="pswd-msg">
                   <h4>password must contain the following : </h4>
@@ -117,8 +120,8 @@
                   <label for="phone">mobile number : </label>
                   <input type="tel" id="phone" name="phone" placeholder="Enter your mobile number">
                 </div>
-                <div class="sign-up-btn">
-                  <button type="submit">sign up</button>
+                <div>
+                  <button type="submit" class="sign-up-btn">sign up</button>
                 </div>
               </form>
               <!--sign up form end here-->
