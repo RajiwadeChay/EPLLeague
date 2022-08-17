@@ -1,0 +1,137 @@
+<!doctype html>
+<!-- If multi-language site, reconsider usage of html lang declaration here. -->
+<html lang="en"> 
+
+<head>
+  <meta charset="utf-8">
+  <title>PremierLeague.loginpage.com</title>
+  <!-- View-port Basics: http://mzl.la/VYREaP -->
+  <!-- This meta tag is used for mobile device to display the page without any zooming,
+       so how much the device is able to fit on the screen is what's shown initially. 
+       Remove comments from this tag, when you want to apply media queries to the website. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- Place favicon.ico in the root directory: mathiasbynens.be/notes/touch-icons -->
+  <link rel="shortcut icon" href="favicon.ico" />
+  <!--font-awesome link for icons-->
+  <link rel="stylesheet" media="screen" href="assets/vendor/font-awesome/css/all.min.css" >
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Default style-sheet is for 'media' type screen (color computer display).  -->
+  <link rel="stylesheet" media="screen" href="assets/css/style.css" >
+</head>
+
+<body>
+  <!--container start-->
+  <div class="container">
+    <!--main section start-->
+    <main>
+      <div>
+        <div class="wrapper">
+          <!--premier league image start here-->
+          <figure class="epl-img">
+            <img src="assets/images/loginPageImg.jpeg" alt="Premier League Logo">
+          </figure>
+          <!--premier league image end here-->
+          <!--login info start here-->
+          <div class="login-info">
+            <h2>welcome to <span class="text-cap">english premier league</span></h2>
+            <!--tab list start here-->
+            <ul class="tab-list">
+              <li><a href="#FIXME" title="Sign In" target="_self">sign in</a></li>
+              <li><a href="#FIXME" title="Sign Up" target="_self">sign up</a></li>
+            </ul>
+            <!--tab list end here-->
+            <!--tab content start here-->
+            <div class="tab-content">
+              <h3>sign in to existing account</h3>
+              <!--sign in form start here-->
+              <form action="#FIXME" method="post" name="signInForm">
+                <div class="email">
+                  <label for="email">email address : </label>
+                  <input type="email" id="email" name="email" placeholder="Enter your email address">
+                </div>
+                <div class="pswd">
+                  <label for="pswd">password : </label>
+                  <input type="password" id="pswd" name="pswd" placeholder="Enter your password">
+                </div>
+                <div class="sign-in-btn">
+                  <button type="submit">sign in</button>
+                </div>
+                <div class="remember-me-checkbox">
+                  <label>
+                    <input type="checkbox" checked="checked" name="remember"> remember me
+                  </label>
+                </div>
+                <div class="forgot-pswd">
+                  <span><a href="#FIXME" title="Forgot Password" target="_self">forgot password?</a></span>
+                </div>
+              </form>
+              <!--sign in form end here-->
+            </div>
+            <div class="tab-content">
+              <h3>sign up to craete new account</h3>
+              <!--sign up form start here-->
+              <form action="#FIXME" method="post" name="sign-up-form">
+                <div class="first-name">
+                  <label for="fName">first name : </label>
+                  <input type="text" id="fName" name="fName" placeholder="Enter your first name">
+                </div>
+                <div class="last-name">
+                  <label for="lName">last name : </label>
+                  <input type="text" id="lName" name="lName" placeholder="Enter your last name">
+                </div>
+                <div class="email">
+                  <label for="uEmail">email address : </label>
+                  <input type="email" id="uEmail" name="uEmail" placeholder="Enter your email address">
+                </div>
+                <div class="pswd">
+                  <label for="newPswd"></label>
+                  <input type="password" id="newPswd" name="newPswd" placeholder="Enter your new password">
+                </div>
+                <div class="pswd-msg">
+                  <h4>password must contain the following : </h4>
+                  <p class="invalid letter">a lowercase letter</p>
+                  <p class="invalid capital">a capital (uppercase) letter</p>
+                  <p class="invalid number">a number</p>
+                  <p class="invalid length">minimum 8 characters</p>
+                </div>
+                <div class="gender-radio-grup">
+                  <span>gender</span>
+                  <div>
+                    <input type="radio" id="male" name="gender" value="Male">
+                    <label for="male">male</label>
+                  </div>
+                  <div>
+                    <input type="radio" id="female" name="gender" value="Female">
+                    <label for="female">female</label>
+                  </div>
+                  <div>
+                    <input type="radio" id="other" name="gender" value="Other">
+                    <label for="other">other</label>
+                  </div>
+                </div>
+                <div class="dob">
+                  <label for="dob">date of birth : </label>
+                  <input type="date" id="dob" name="dob">
+                </div>
+                <div class="phone">
+                  <label for="phone">mobile number : </label>
+                  <input type="tel" id="phone" name="phone" placeholder="Enter your mobile number">
+                </div>
+                <div class="sign-up-btn">
+                  <button type="submit">sign up</button>
+                </div>
+              </form>
+              <!--sign up form end here-->
+            </div>
+            <!--tab content end here-->
+          </div>
+          <!--login info end here-->
+        </div>
+      </div>
+    </main>
+    <!--main section end-->
+  </div>
+  <!--container end-->
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
