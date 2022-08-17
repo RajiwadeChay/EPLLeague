@@ -203,6 +203,11 @@ li {
   margin: 0 auto;
 }
 
+/*comman class*/
+.text-cap {
+  text-transform: capitalize;
+}
+
 /*=================================
   Header styling starts here
 =================================*/
@@ -219,11 +224,13 @@ main .wrapper {
   max-width: 1920px;
   width: 100%;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: row;
 }
 
+/*styling for login info div start here*/
 .login-info {
+  padding: 15px 1%;
   flex-basis: 70%;
 }
 
@@ -234,11 +241,179 @@ h2 {
   color: #350138;
 }
 
+h2::first-letter,
+h3::first-letter,
+h4::first-letter {
+  text-transform: capitalize;
+}
 
+/*styling for tab list start here*/
+.tab-list {
+  width: 100%;
+  margin-top: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
 
+.tab-list li {
+  width: 100%;
+  padding: 15px 0;
+  background-color: #350138;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.5s;
+}
 
+.tab-list li:hover,
+form button:hover {
+  background-color: #E90152;
+}
 
+.tab-list a {
+  color: #FFF;
+  text-transform: capitalize;
+}
 
+.active-tab {
+  background-color: #E90152;
+}
+
+.tab-content {
+  margin-top: 25px;
+  display: none;
+}
+/*styling for tab list end here*/
+/*styling for tab content start here*/
+h3 {
+  font-size: 30px;
+  font-weight: 600;
+  color: #E90152;
+}
+
+/*styling for form start here*/
+form {
+  padding: 25px 12%;
+}
+
+form div {
+  padding-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  padding: 10px 0;
+  color: #350138;
+  font-size: 17px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+form input {
+  padding: 10px 5%;
+  font-size: 17px;
+}
+
+form button {
+  padding: 15px 5%;
+  background-color: #350138;
+  border: none;
+  color: #FFF;
+  font-size: 17px;
+  font-weight: 600;
+  text-transform: capitalize;
+  transition: all 0.5s;
+}
+
+.remember-me-checkbox,
+.forgot-pswd {
+  display: inline-block;
+  width: 49%;
+}
+
+.forgot-pswd {
+  text-align: end;
+}
+
+.forgot-pswd a {
+  color: #350138;
+  transition: all 0.5s;
+}
+
+.forgot-pswd a:hover {
+  color: #E90152;
+  text-decoration: underline;
+}
+
+h4 {
+  padding-bottom: 10px;
+  color: #350138;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.pswd-msg {
+  display: none;
+}
+
+.pswd-msg p {
+  padding-bottom: 5px;
+  color: #350138;
+  font-size: 15px;
+}
+
+.pswd-msg p::before {
+  padding-right: 2%;
+  font-family: "fontAwesome";
+  font-size: 15px;
+  text-indent: 0;
+}
+
+.invalid::before {
+  content: "\f00d";
+  color: #350138;
+}
+
+.valid::before {
+  content: "\f00c";
+  color: #E90152;
+}
+
+.gender-radio-grup span {
+  padding: 10px 0;
+  color: #350138;
+  font-size: 17px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.gender-radio-grup {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.gender-radio-grup label,
+.gender-radio-grup input {
+  padding: 0 2%;
+  display: inline-block;
+}
+
+.gender-radio-grup div {
+  display: flex;
+  padding-bottom: 5px;
+  flex-direction: row;
+}
+/*styling for form end here*/
+/*styling for tab content end here*/
+/*styling for login info div end here*/
+
+.show {
+  display: block;
+}
 /*styling for login page end here*/
 /*_______________________________________________*/
 
