@@ -289,11 +289,6 @@ h4::first-letter,
   transition: all 0.5s;
 }
 
-.tab-list li:hover,
-form button:hover {
-  background-color: #E90152;
-}
-
 .tab-list a {
   color: #FFF;
   text-transform: capitalize;
@@ -377,11 +372,6 @@ form button {
 .forgot-pswd a {
   color: #350138;
   transition: all 0.5s;
-}
-
-.forgot-pswd a:hover {
-  color: #E90152;
-  text-decoration: underline;
 }
 
 h4 {
@@ -472,10 +462,6 @@ h4 {
   transition: 0.3s;
 }
 
-.closebtn:hover {
-  color: #350138;
-}
-
 .show {
   display: block;
 }
@@ -513,5 +499,168 @@ h4 {
 =================================*/
 
 /*media query starts*/
+/*media query to remove hover effect start here*/
+@media only screen and (min-width: 995px) {
+
+  /*____________________________________________*/
+  /*styling for login page start here*/
+  .tab-list li:hover,
+  form button:hover {
+    background-color: #E90152;
+  }
+
+  .forgot-pswd a:hover {
+    color: #E90152;
+    text-decoration: underline;
+  }
+
+  .closebtn:hover {
+    color: #350138;
+  }
+
+  /*styling for login page end here*/
+  /*____________________________________________*/
+}
+
+/*media query to remove hover effect end here*/
+
+/*media query for 1025px starts here*/
+@media only screen and (max-width: 1025px) {
+
+  /*____________________________________________*/
+  /*styling for login page start here*/
+  h2 {
+    font-size: 30px;
+  }
+
+  /*styling for login page end here*/
+  /*____________________________________________*/
+}
+
+/*media query for 1025px end here*/
+
 /*media query for 995px starts here*/
-@media only screen and (max-width: 995px) {}
+@media only screen and (max-width: 995px) {
+
+  /*____________________________________________*/
+  /*styling for login page start here*/
+  .login-content .wrapper {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .epl-img,
+  .login-info {
+    flex-basis: auto;
+    width: 100%;
+  }
+
+  .epl-img img {
+    height: 415px;
+  }
+
+  .login-info {
+    padding: 20px 2%;
+    overflow-y: visible;
+  }
+
+  .alert {
+    margin: 15px 10% 0 10%;
+    padding: 30px 2%;
+  }
+
+  h2 {
+    font-size: 45px;
+    margin: 15px 10% 0 10%;
+    text-align: center;
+  }
+
+  .tab-list,
+  .tab-content {
+    width: auto;
+    margin: 25px 10% 0 10%;
+  }
+
+  /*styling for login page end here*/
+  /*____________________________________________*/
+}
+
+/*media query for 995px end here*/
+
+/*media query for 767px starts here*/
+@media only screen and (max-width: 767px) {
+
+  /*____________________________________________*/
+  /*styling for login page start here*/
+  .epl-img img {
+    height: 315px;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  h3 {
+    font-size: 25px;
+  }
+
+  form label,
+  form input,
+  form button {
+    font-size: 15px;
+  }
+
+  /*styling for login page end here*/
+  /*____________________________________________*/
+}
+
+/*media query for 767px end here*/
+
+/*media query for 767px starts here*/
+@media only screen and (max-width: 767px) {
+
+  /*____________________________________________*/
+  /*styling for login page start here*/
+  .epl-img img {
+    height: 315px;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  h3 {
+    font-size: 25px;
+  }
+
+  form label,
+  form input,
+  form button {
+    font-size: 15px;
+  }
+
+  /*styling for login page end here*/
+  /*____________________________________________*/
+}
+
+/*media query for 767px end here*/
+
+/*media query for 480px starts here*/
+@media only screen and (max-width: 480px) {
+
+  /*____________________________________________*/
+  /*styling for login page start here*/
+
+  h3 {
+    font-size: 21px;
+  }
+
+  form button {
+    padding: 15px 5%;
+  }
+
+  /*styling for login page end here*/
+  /*____________________________________________*/
+}
+
+/*media query for 480px end here*/
