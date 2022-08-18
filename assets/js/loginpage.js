@@ -23,6 +23,15 @@ var signInBtn = document.querySelector(".sign-in-btn");
 var email = document.getElementById("email");
 var pswd = document.getElementById("pswd");
 
+//For alert messages
+var close = document.querySelector(".closebtn");
+var alertBox = document.querySelector(".alert");
+
+close.addEventListener('click', function () {
+  var parentAlert = close.parentElement;
+  parentAlert.classList.remove("show");
+});
+
 pswd.maxLength = 8;
 
 signInForm.addEventListener("submit", signIn);
@@ -30,7 +39,6 @@ signInForm.addEventListener("submit", signIn);
 //for keeping user log in if he alerady logged in
 let userEmail = localStorage.getItem('uEmail') ? localStorage.getItem('uEmail') : '';
 if (userEmail != '') {
-  alert('You are already logged in');
   location.href = "../homepage.html";
 }
 
@@ -53,14 +61,14 @@ function checkUserDetails() {
   let user_records = new Array();
   user_records = JSON.parse(localStorage.getItem("users")) ? JSON.parse(localStorage.getItem("users")) : [];
   if (user_records.some(function (v) { return v.uEmail == email && v.newPswd == pswd })) {
-    alert("Login Pass");
     let current_user = user_records.filter(function (v) { return v.uEmail == email && v.newPswd == pswd })[0];
-    localStorage.setItem('uEmail', current_user.email);
-    localStorage.setItem('newPswd', current_user.pswd);
+    localStorage.setItem('fName', current_user.fName);
+    localStorage.setItem('uEmail', current_user.uEmail);
+    localStorage.setItem('newPswd', current_user.newPswd);
     location.href = "../homepage.html";
   }
   else {
-    alert('Login Fail');
+    alertBox.classList.add("show");
   }
 
 }
@@ -281,4 +289,3 @@ newPswd.addEventListener("keyup", function () {
     length.classList.add("invalid");
   }
 });
-

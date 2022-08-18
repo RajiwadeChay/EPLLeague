@@ -446,6 +446,36 @@ h4 {
 /*styling for tab content end here*/
 /*styling for login info div end here*/
 
+.alert {
+  padding: 30px 2%;
+  margin-bottom: 15px;
+  display: none;
+  background-color: #E90152;
+  color: #FFF;
+  opacity: 1;
+  transition: opacity 0.6s;
+}
+
+.alert h3 {
+  color: #FFF;
+  font-size: 25px;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: #FFF;
+  cursor: pointer;
+  font-size: 22px;
+  font-weight: bold;
+  float: right;
+  line-height: 20px;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: #350138;
+}
+
 .show {
   display: block;
 }
@@ -454,8 +484,15 @@ h4 {
 /*_______________________________________________*/
 
 
+/*_______________________________________________*/
+/*styling for home page start here*/
 
+.logout-btn {
+  float: right;
+}
 
+/*styling for home page end here*/
+/*_______________________________________________*/
 
 /*=================================
   main styling ends here
