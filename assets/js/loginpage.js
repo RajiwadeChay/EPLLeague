@@ -27,6 +27,13 @@ pswd.maxLength = 8;
 
 signInForm.addEventListener("submit", signIn);
 
+//for keeping user log in if he alerady logged in
+let userEmail = localStorage.getItem('uEmail') ? localStorage.getItem('uEmail') : '';
+if (userEmail != '') {
+  alert('You are already logged in');
+  location.href = "../homepage.html";
+}
+
 //function to sign in
 function signIn(e) {
   //preventing from load
