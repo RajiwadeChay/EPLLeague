@@ -47,7 +47,7 @@ function checkUserDetails() {
   user_records = JSON.parse(localStorage.getItem("users")) ? JSON.parse(localStorage.getItem("users")) : [];
   if (user_records.some(function (v) { return v.uEmail == email && v.newPswd == pswd })) {
     alert("Login Pass");
-    let current_user = user_records.filter((v) => { return v.uEmail == email && v.newPswd == pswd })[0]
+    let current_user = user_records.filter(function (v) { return v.uEmail == email && v.newPswd == pswd })[0];
     localStorage.setItem('uEmail', current_user.email);
     localStorage.setItem('newPswd', current_user.pswd);
     location.href = "../homepage.html";
@@ -57,7 +57,6 @@ function checkUserDetails() {
   }
 
 }
-
 
 //function to validate sign in
 function validateSignIn() {
