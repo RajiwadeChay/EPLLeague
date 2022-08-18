@@ -20,7 +20,7 @@
   <div class="container">
     <!--main section start-->
     <main>
-      <div>
+      <div class="login-content">
         <div class="wrapper">
           <!--premier league image start here-->
           <figure class="epl-img">
@@ -44,8 +44,7 @@
             <div class="tab-content show">
               <h3>sign in to existing account</h3>
               <!--sign in form start here-->
-              <form action="#FIXME" method="post" name="signInForm"
-              class="sign-in-form">
+              <form action="#FIXME" name="signInForm" class="sign-in-form">
                 <div class="email">
                   <label for="email">email address : </label>
                   <input type="email" id="email" name="email" placeholder="Enter your email address">
@@ -65,7 +64,7 @@
                   </label>
                 </div>
                 <div class="forgot-pswd">
-                  <span><a href="#FIXME" title="Forgot Password" target="_self">forgot password?</a></span>
+                  <a href="#FIXME" title="Forgot Password" target="_self">forgot password?</a>
                 </div>
               </form>
               <!--sign in form end here-->
@@ -73,22 +72,26 @@
             <div class="tab-content">
               <h3>sign up to create new account</h3>
               <!--sign up form start here-->
-              <form action="#FIXME" method="post" name="signUpForm" class="sign-up-form">
+              <form action="#FIXME" name="signUpForm" class="sign-up-form">
                 <div class="first-name">
                   <label for="fName">first name : </label>
                   <input type="text" id="fName" name="fName" placeholder="Enter your first name">
+                  <span class="err-span">error</span>
                 </div>
                 <div class="last-name">
                   <label for="lName">last name : </label>
                   <input type="text" id="lName" name="lName" placeholder="Enter your last name">
+                  <span class="err-span">error</span>
                 </div>
                 <div class="email">
                   <label for="uEmail">email address : </label>
                   <input type="email" id="uEmail" name="uEmail" placeholder="Enter your email address">
+                  <span class="err-span">error</span>
                 </div>
                 <div class="pswd">
                   <label for="newPswd">new password : </label>
                   <input type="password" id="newPswd" name="newPswd" placeholder="Enter your new password" autocomplete="off">
+                  <span class="err-span">error</span>
                 </div>
                 <div class="pswd-msg">
                   <h4>password must contain the following : </h4>
@@ -111,14 +114,17 @@
                     <input type="radio" id="other" name="gender" value="Other">
                     <label for="other">other</label>
                   </div>
+                  <span class="err-span">error</span>
                 </div>
                 <div class="dob">
                   <label for="dob">date of birth : </label>
                   <input type="date" id="dob" name="dob">
+                  <span class="err-span">error</span>
                 </div>
                 <div class="phone">
                   <label for="phone">mobile number : </label>
                   <input type="tel" id="phone" name="phone" placeholder="Enter your mobile number">
+                  <span class="err-span">error</span>
                 </div>
                 <div>
                   <button type="submit" class="sign-up-btn">sign up</button>
