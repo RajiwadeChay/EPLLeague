@@ -13,7 +13,34 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
 </head>
 <body>
-  
+  <div class="container">
+    <main>
+      <section>
+        <div class="wrapper">
+          <h2>Home Page</h2>
+          <button onclick="Logout();" style="float: right;">Logout</button>
+          <hr>
+          <h3>Welcome</h3>
+          <h4>Name:
+            <script>document.write(localStorage.getItem('uEmail'));</script>
+          </h4>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script>
+    let uEmail = localStorage.getItem('uEmail') ? localStorage.getItem('uEmail') : ''
+    console.log(uEmail);
+    if (uEmail == '') {
+      alert('U need to login first');
+      location.href = "loginpage.html";
+    }
+    function Logout() {
+      localStorage.removeItem('uEmail');
+      localStorage.removeItem('newPswd');
+      location.href = "loginpage.html";
+    }
+  </script>
   <script src="assets/js/homepage.js"></script>
 </body>
 </html>
