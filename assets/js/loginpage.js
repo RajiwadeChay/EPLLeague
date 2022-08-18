@@ -26,6 +26,7 @@ var pswd = document.getElementById("pswd");
 //For alert messages
 var close = document.querySelector(".closebtn");
 var alertBox = document.querySelector(".alert");
+var alertMsg = document.querySelector(".alert h3");
 
 close.addEventListener('click', function () {
   var parentAlert = close.parentElement;
@@ -68,6 +69,7 @@ function checkUserDetails() {
     location.href = "../homepage.html";
   }
   else {
+    alertMsg.textContent = "Sign in Failed! Please check details and try again";
     alertBox.classList.add("show");
   }
 
@@ -140,6 +142,8 @@ function signUp(e) {
   if (validateSignUp()) {
     saveData();
     signUpForm.reset();
+    alertMsg.textContent = "Signed up new user successfully!";
+    alertBox.classList.add("show");
   }
 }
 
