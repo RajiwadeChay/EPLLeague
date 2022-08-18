@@ -220,7 +220,11 @@ li {
 =================================*/
 /*_______________________________________________*/
 /*styling for login page start here*/
-html,body,.container,main,.login-content {
+html,
+body,
+.container,
+main,
+.login-content {
   height: 100%;
 }
 
@@ -243,6 +247,7 @@ html,body,.container,main,.login-content {
   object-fit: cover;
   object-position: center;
 }
+
 /*styling for epl img end here*/
 /*styling for login info div start here*/
 .login-info {
@@ -299,7 +304,7 @@ form button:hover {
 }
 
 .tab-content {
-  padding:30px 5%;
+  padding: 30px 5%;
   margin-top: 25px;
   display: none;
   background-color: #E8F0FE;
@@ -315,10 +320,6 @@ h3 {
 }
 
 /*styling for form start here*/
-/* form {
-  padding: 25px 12%;
-} */
-
 form div {
   margin-top: 20px;
   display: flex;
@@ -417,14 +418,14 @@ h4 {
   color: #E90152;
 }
 
-.gender-radio-grup {
+/* .gender-radio-grup {
   display: flex;
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
-}
+} */
 
-.gender-radio-grup span {
+.gender-title {
   padding: 10px 0;
   color: #350138;
   font-size: 17px;
