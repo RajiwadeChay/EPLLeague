@@ -213,6 +213,13 @@ li {
 =================================*/
 /*_______________________________________________*/
 /*styling for home page start here*/
+header {
+  position: absolute;
+  right: 0;
+  left: 0;
+  z-index: 1;
+}
+
 header .wrapper {
   width: 100%;
   display: flex;
@@ -269,11 +276,6 @@ nav a,
 
 .active-nav {
   color: #E90152;
-}
-
-nav a:hover,
-.logout a:hover {
-  border-bottom: 1px solid #E90152;
 }
 
 .logout {
@@ -551,6 +553,67 @@ h4 {
 
 /*_______________________________________________*/
 /*styling for home page start here*/
+.slider-container {
+  position: relative;
+}
+
+.slider-container .wrapper {
+  width: 100%;
+}
+
+.slider-container ul {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.slide:not(:first-child) {
+  display: none;
+}
+
+.slide {
+  width: 100%;
+  padding: 450px 12% 150px 7%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.slide:nth-child(1) {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/assets/images/sliderImg1.jpg');
+}
+
+.slide:nth-child(2) {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/assets/images/sliderImg2.jpg');
+}
+
+.slide:nth-child(3) {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/assets/images/sliderImg3.jpg');
+}
+
+.slide h2 {
+  color: #E90152;
+  font-size: 65px;
+  font-weight: bolder;
+  text-transform: capitalize;
+}
+
+.slider-btns {
+  display: flex;
+  position: absolute;
+  bottom: 100px;
+  left: 7%;
+}
+
+.slider-btns a {
+  color: #FFF;
+  padding: 10px 115%;
+  font-size: 35px;
+  border: 1px solid #FFF;
+  border-radius: 50%;
+}
+
+
 
 
 /*styling for home page end here*/
@@ -596,6 +659,17 @@ h4 {
 
   /*styling for login page end here*/
   /*____________________________________________*/
+
+
+  /*_______________________________________________*/
+  /*styling for home page start here*/
+  nav a:hover,
+  .logout a:hover {
+    border-bottom: 1px solid #E90152;
+  }
+
+  /*styling for home page end here*/
+  /*_______________________________________________*/
 }
 
 /*media query to remove hover effect end here*/
