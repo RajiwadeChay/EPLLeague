@@ -100,3 +100,16 @@ function openSlide(item, idx) {
     manualShow(count);
   }
 }
+
+const html = document.querySelector("html");
+const hamburger = document.querySelector(".hamburger");
+const hamBar = document.querySelector(".bar");
+const nav = document.querySelector("nav");
+
+hamBar.addEventListener("click", openMenu);
+
+function openMenu() {
+  html.classList.toggle("active-html");
+  hamburger.classList.toggle("active-ham");
+  nav.classList.toggle("active-nav");
+}
