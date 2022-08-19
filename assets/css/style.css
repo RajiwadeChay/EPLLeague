@@ -800,11 +800,138 @@ h4 {
 /*=================================
   footer styling starts here
 =================================*/
+/*_______________________________________________*/
+/*styling for home page start here*/
+footer {
+  background-color: #350138;
+  color: #FFF;
+}
 
+.upper-footer,
+.lower-footer {
+  padding: 40px 0;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #FFF;
+  justify-content: space-between;
+}
 
+/*styling for footer logo start here*/
+.footer-logo a {
+  padding: 10px;
+  background: #FFF;
+  border-radius: 50%;
+}
 
+.footer-logo img {
+  max-width: 50px;
+  max-height: 50px;
+}
 
+/*styling for footer logo end here*/
+/*styling for footer nav start here*/
+.footer-nav {
+  width: 100%;
+  text-align: end;
+}
 
+.footer-nav li {
+  margin-right: 5%;
+}
+
+.footer-nav li:last-child {
+  margin: 0;
+}
+
+.footer-nav a {
+  padding: 10px 0;
+  border-bottom: 1px solid transparent;
+  color: #FFF;
+  font-size: 17px;
+  font-weight: 600;
+  text-transform: capitalize;
+  transition: all 0.5s;
+}
+
+/*styling for footer nav end here*/
+/*styling for lower footer start here*/
+.lower-footer {
+  border: none;
+}
+
+.lower-footer a {
+  color: #FFF;
+  font-size: 17px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+/*styling for social list start here*/
+.social-list {
+  width: 15%;
+}
+
+.social-list li {
+  margin-right: 10%;
+}
+
+.social-list li:last-child {
+  margin: 0;
+}
+
+.social-list a {
+  text-indent: -9999px;
+  transition: all 0.5s ease;
+}
+
+.social-list a::after {
+  font-family: "fontAwesome";
+  float: right;
+  text-indent: 0;
+}
+
+.social-list li:nth-child(1) a::after {
+  content: "\f09a";
+}
+
+.social-list li:nth-child(2) a::after {
+  content: "\f099";
+}
+
+.social-list li:nth-child(3) a::after {
+  content: "\f17d";
+}
+
+.social-list li:nth-child(4) a::after {
+  content: "\f16d";
+}
+
+.social-list a:hover {
+  color: #E90152;
+  animation: scaleBig 0.5s ease forwards;
+}
+
+/*styling for social list end here*/
+/*styling for lower footer end here*/
+
+/*animation start here*/
+@keyframes scaleBig {
+  0% {
+    transform: scale(1, 1);
+  }
+
+  50% {
+    transform: scale(1.2, 1.2);
+  }
+
+  100% {
+    transform: scale(1, 1);
+  }
+
+}
+
+/*styling for home page end here*/
+/*_______________________________________________*/
 
 /*=================================
   footer styling ends here
@@ -837,7 +964,8 @@ h4 {
   /*_______________________________________________*/
   /*styling for home page start here*/
   nav a:hover,
-  .logout a:hover {
+  .logout a:hover,
+  .footer-nav a:hover {
     border-bottom: 1px solid #E90152;
   }
 
