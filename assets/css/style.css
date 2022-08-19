@@ -208,6 +208,10 @@ li {
   text-transform: capitalize;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 /*=================================
   Header styling starts here
 =================================*/
@@ -311,13 +315,13 @@ nav a,
 =================================*/
 /*_______________________________________________*/
 /*styling for login page start here*/
-html,
+/* html,
 body,
 .container,
 main,
 .login-content {
   height: 100%;
-}
+} */
 
 .login-content .wrapper {
   max-width: 1920px;
@@ -669,6 +673,94 @@ h4 {
 /*styling for slider btns end here*/
 /*styling for slider end here*/
 
+/*styling for about epl start here*/
+.about-epl {
+  padding: 90px 0;
+}
+
+.about-epl h3 {
+  color: #350138;
+  font-size: 50px;
+  font-weight: 600;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.about-content {
+  margin-top: 35px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.about-img {
+  padding: 35px 0;
+  display: flex;
+  align-items: center;
+  flex-basis: 40%;
+  justify-content: center;
+}
+
+.about-img figure {
+  max-width: 400px;
+  max-height: 800px;
+  box-shadow: 20px 20px #E90152;
+}
+
+.content {
+  flex-basis: 60%;
+}
+
+.origins,
+.big-six {
+  max-height: 400px;
+  padding: 35px 5%;
+  position: relative;
+  overflow: hidden;
+  transition: max-height 0.15s ease-out;
+}
+
+.read-more {
+  width: 100%;
+  height: 60px;
+  padding-top: 40px;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-image: linear-gradient(to bottom, transparent, #FFF);
+  cursor: pointer;
+  text-align: center;
+}
+
+.read-more a {
+  color: #350138;
+  font-size: 17px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+
+.origins h4,
+.big-six h4 {
+  padding-bottom: 15px;
+  color: #350138;
+  font-size: 35px;
+  font-weight: 600;
+}
+
+.origins p,
+.big-six p {
+  padding-bottom: 15px;
+  font-size: 17px;
+  line-height: 25px;
+}
+
+/*styling for about epl end here*/
+/*styling for epl landscape start here*/
+
+/*styling for epl landscape end here*/
+
 /*styling for home page end here*/
 /*_______________________________________________*/
 
@@ -679,7 +771,6 @@ h4 {
 /*=================================
   footer styling starts here
 =================================*/
-
 
 
 
