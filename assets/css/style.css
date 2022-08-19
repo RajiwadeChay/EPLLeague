@@ -236,7 +236,7 @@ header .wrapper {
 
 /*styling for logo start here*/
 h1 {
-  padding-left: 2%;
+  padding-left: 5%;
   order: 1;
 }
 
@@ -292,7 +292,7 @@ nav a,
 /*styling for nav end here*/
 /*styling for logout start here*/
 .logout {
-  padding-right: 2%;
+  padding-right: 5%;
   order: 4;
 }
 
@@ -557,10 +557,6 @@ h4 {
   transition: 0.3s;
 }
 
-.show {
-  display: block;
-}
-
 /*styling for login page end here*/
 /*_______________________________________________*/
 
@@ -583,12 +579,9 @@ h4 {
   overflow: hidden;
 }
 
-.slide:not(:first-child) {
-  display: none;
-}
-
 .slide {
   width: 100%;
+  display: none;
   padding: 450px 12% 150px 7%;
   background-position: center;
   background-repeat: no-repeat;
@@ -660,14 +653,6 @@ h4 {
 .slider-btns a {
   color: #FFF;
   font-size: 25px;
-}
-
-.slider-btns div:hover {
-  border: 1px solid #E90152;
-}
-
-.slider-btns a:hover {
-  color: #E90152;
 }
 
 /*styling for slider btns end here*/
@@ -748,9 +733,8 @@ h4 {
   transition: all 0.5s;
 }
 
-.read-more a:hover {
-  color: #E90152;
-  text-decoration: underline;
+.expand {
+  max-height: 100%;
 }
 
 .origins h4,
@@ -793,6 +777,20 @@ h4 {
 /*styling for home page end here*/
 /*_______________________________________________*/
 
+/*comman important clasess start here*/
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.fade {
+  animation: fadeInOut 1s ease forwards;
+}
+
+/*comman important clasess end here*/
 /*=================================
   main styling ends here
 =================================*/
@@ -868,7 +866,7 @@ footer {
 
 /*styling for social list start here*/
 .social-list {
-  width: 15%;
+  width: 8%;
 }
 
 .social-list li {
@@ -906,11 +904,6 @@ footer {
   content: "\f16d";
 }
 
-.social-list a:hover {
-  color: #E90152;
-  animation: scaleBig 0.5s ease forwards;
-}
-
 /*styling for social list end here*/
 /*styling for lower footer end here*/
 
@@ -926,6 +919,17 @@ footer {
 
   100% {
     transform: scale(1, 1);
+  }
+
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
   }
 
 }
@@ -966,7 +970,27 @@ footer {
   nav a:hover,
   .logout a:hover,
   .footer-nav a:hover {
+    color: #E90152;
     border-bottom: 1px solid #E90152;
+  }
+
+  .slider-btns div:hover {
+    border: 1px solid #E90152;
+  }
+
+  .slider-btns a:hover {
+    color: #E90152;
+  }
+
+  .read-more a:hover,
+  .copy-right:hover {
+    color: #E90152;
+    text-decoration: underline;
+  }
+
+  .social-list a:hover {
+    color: #E90152;
+    animation: scaleBig 0.5s ease forwards;
   }
 
   /*styling for home page end here*/
