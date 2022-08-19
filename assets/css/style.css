@@ -215,6 +215,7 @@ li {
 /*styling for home page start here*/
 header {
   position: absolute;
+  top: 20px;
   right: 0;
   left: 0;
   z-index: 1;
@@ -222,12 +223,14 @@ header {
 
 header .wrapper {
   width: 100%;
+  padding: 10px 0;
   display: flex;
   align-items: center;
   background-color: #350138;
   justify-content: space-between;
 }
 
+/*styling for logo start here*/
 h1 {
   padding-left: 2%;
   order: 1;
@@ -244,11 +247,15 @@ h1 img {
   max-height: 50px;
 }
 
+/*styling for logo end here*/
+/*styling for hamburger start here*/
 .hamburger {
   display: none;
   order: 2;
 }
 
+/*styling for hamburger end here*/
+/*styling for nav start here*/
 nav {
   width: 100%;
   order: 3;
@@ -278,6 +285,8 @@ nav a,
   color: #E90152;
 }
 
+/*styling for nav end here*/
+/*styling for logout start here*/
 .logout {
   padding-right: 2%;
   order: 4;
@@ -290,6 +299,7 @@ nav a,
   text-indent: 0;
 }
 
+/*styling for logout end here*/
 /*styling for home page end here*/
 /*_______________________________________________*/
 /*=================================
@@ -553,6 +563,8 @@ h4 {
 
 /*_______________________________________________*/
 /*styling for home page start here*/
+
+/*styling for slider start here*/
 .slider-container {
   position: relative;
 }
@@ -598,23 +610,64 @@ h4 {
   text-transform: capitalize;
 }
 
-.slider-btns {
+/*styling for carousel start here*/
+.carousel {
+  width: 8%;
+  padding: 0 0.5%;
   display: flex;
   position: absolute;
-  bottom: 100px;
+  bottom: 50px;
   left: 7%;
 }
 
-.slider-btns a {
+.carousel a {
+  padding: 0 10%;
   color: #FFF;
-  padding: 10px 115%;
-  font-size: 35px;
+  text-indent: -9999px;
+}
+
+.carousel a::after {
+  content: "\f111";
+  font-family: "Font Awesome 6 Free";
+  float: right;
+  text-indent: 0;
+}
+
+.carousel .active-dot {
+  color: #E90152;
+}
+
+/*styling for carousel end here*/
+/*styling for slider btns start here*/
+.slider-btns {
+  display: flex;
+  position: absolute;
+  bottom: 90px;
+  left: 7%;
+}
+
+.slider-btns div {
+  padding: 10px 65%;
+  margin: 0 45%;
   border: 1px solid #FFF;
   border-radius: 50%;
 }
 
+.slider-btns a {
+  color: #FFF;
+  font-size: 25px;
+}
 
+.slider-btns div:hover {
+  border: 1px solid #E90152;
+}
 
+.slider-btns a:hover {
+  color: #E90152;
+}
+
+/*styling for slider btns end here*/
+/*styling for slider end here*/
 
 /*styling for home page end here*/
 /*_______________________________________________*/
