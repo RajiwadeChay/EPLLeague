@@ -673,12 +673,14 @@ h4 {
 /*styling for slider btns end here*/
 /*styling for slider end here*/
 
-/*styling for about epl start here*/
-.about-epl {
+/*styling for about epl and competition start here*/
+.about-epl,
+.competition-format {
   padding: 90px 0;
 }
 
-.about-epl h3 {
+.about-epl h3,
+.competition-format h3 {
   color: #350138;
   font-size: 50px;
   font-weight: 600;
@@ -686,14 +688,16 @@ h4 {
   text-transform: capitalize;
 }
 
-.about-content {
+.about-content,
+.competition-content {
   margin-top: 35px;
   display: flex;
   align-items: flex-start;
   justify-content: center;
 }
 
-.about-img {
+.about-img,
+.competition-img {
   padding: 35px 0;
   display: flex;
   align-items: center;
@@ -701,7 +705,8 @@ h4 {
   justify-content: center;
 }
 
-.about-img figure {
+.about-img figure,
+.competition-img figure {
   max-width: 400px;
   max-height: 800px;
   box-shadow: 20px 20px #E90152;
@@ -712,7 +717,9 @@ h4 {
 }
 
 .origins,
-.big-six {
+.big-six,
+.competition,
+.promotion {
   max-height: 400px;
   padding: 35px 5%;
   position: relative;
@@ -738,11 +745,18 @@ h4 {
   font-size: 17px;
   font-weight: 600;
   text-transform: capitalize;
+  transition: all 0.5s;
 }
 
+.read-more a:hover {
+  color: #E90152;
+  text-decoration: underline;
+}
 
 .origins h4,
-.big-six h4 {
+.big-six h4,
+.competition h4,
+.promotion h4 {
   padding-bottom: 15px;
   color: #350138;
   font-size: 35px;
@@ -750,14 +764,29 @@ h4 {
 }
 
 .origins p,
-.big-six p {
+.big-six p,
+.competition p,
+.promotion p {
   padding-bottom: 15px;
   font-size: 17px;
   line-height: 25px;
 }
 
-/*styling for about epl end here*/
+/*styling for about epl and competition end here*/
 /*styling for epl landscape start here*/
+.epl-banner {
+  background-color: #350138;
+  max-height: 250px;
+  overflow: hidden;
+}
+
+.epl-banner div {
+  padding: 120px 0;
+  background-image: url(/assets/images/EPLTransparentLogo.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+}
 
 /*styling for epl landscape end here*/
 
