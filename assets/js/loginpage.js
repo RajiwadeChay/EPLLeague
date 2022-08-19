@@ -50,7 +50,6 @@ function signIn(e) {
 
   if (validateSignIn()) {
     checkUserDetails();
-    // location.href = "../homepage.html";
     signInForm.reset();
   }
 }
@@ -142,8 +141,8 @@ function signUp(e) {
   if (validateSignUp()) {
     saveData();
     signUpForm.reset();
-    alertMsg.textContent = "Signed up new user successfully!";
-    alertBox.classList.add("show");
+    // alertMsg.textContent = "Signed up new user successfully!";
+    // alertBox.classList.add("show");
   }
 }
 
@@ -180,6 +179,8 @@ function saveData() {
     })
     localStorage.setItem("users", JSON.stringify(user_records));
     location.href = "../loginpage.html";
+    alertMsg.textContent = "Signed up new user successfully!";
+    alertBox.classList.add("show");
   }
 
 }
