@@ -38,6 +38,11 @@ const carousel = document.querySelector(".carousel");
 const dotArr = Array.from(carousel.children);
 let count = 1;
 
+prevBtn.addEventListener("click", minusCount);
+nextBtn.addEventListener("click", pluseCount);
+dotArr.forEach(openSlide);
+
+//for auto slide
 slideShow();
 function slideShow() {
   slidesArr.forEach(function (item, idx) {
@@ -53,4 +58,45 @@ function slideShow() {
   setTimeout(slideShow, 3000); // for caaling afetr each 3sec
 }
 
+//for manual slide
+function manualShow(count) {
+  slidesArr.forEach(function (item, idx) {
+    item.classList.remove("show");
+    item.classList.remove("fade");
+    dotArr[idx].classList.remove("active-dot");
+  });
+  slidesArr[count - 1].classList.add("show");
+  slidesArr[count - 1].classList.add("fade");
+  dotArr[count - 1].classList.add("active-dot");
+}
 
+//on click on prev btn
+function minusCount() {
+  if (count > 1) {
+    count--;
+    manualShow(count);
+  } else {
+    count = slidesArr.length;
+    manualShow(count);
+  }
+}
+
+//on click of next btn
+function pluseCount() {
+  if (count >= slidesArr.length) {
+    count = 1
+    manualShow(count);
+  } else {
+    count++;
+    manualShow(count);
+  }
+}
+
+//on click of carousel dot
+function openSlide(item, idx) {
+  item.addEventListener("click", viewSlide);
+  function viewSlide() {
+    count = idx + 1;
+    manualShow(count);
+  }
+}
