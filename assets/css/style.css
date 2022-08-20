@@ -285,7 +285,7 @@ nav a,
   transition: all 0.5s;
 }
 
-.active-nav {
+.active-nav-tab {
   color: #E90152;
 }
 
@@ -306,6 +306,15 @@ nav a,
 /*styling for logout end here*/
 /*styling for home page end here*/
 /*_______________________________________________*/
+
+/*____________________________________________*/
+/*styling for club page start here*/
+.static {
+  position: static;
+}
+
+/*styling for club page end here*/
+/*____________________________________________*/
 /*=================================
   Header styling ends here
 =================================*/
@@ -1032,12 +1041,12 @@ footer {
   /*____________________________________________*/
 
   /*____________________________________________*/
-  /*styling for login page start here*/
+  /*styling for home page start here*/
   .slide {
     padding: 350px 12% 150px 7%;
   }
 
-  /*styling for login page end here*/
+  /*styling for home page end here*/
   /*____________________________________________*/
 
 
