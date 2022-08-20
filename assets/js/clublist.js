@@ -42,7 +42,6 @@ const navTabArr = document.querySelectorAll("nav a");
 navTabArr.forEach(function (item) {
     let tabHref = item.href.toString().includes("clublist.html");
     if (currentPage == true && tabHref == true) {
-        console.log("passed");
         item.classList.add("active-nav-tab");
     } else {
         item.classList.remove("active-nav-tab");
