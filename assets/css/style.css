@@ -324,14 +324,6 @@ nav a,
 =================================*/
 /*_______________________________________________*/
 /*styling for login page start here*/
-/* html,
-body,
-.container,
-main,
-.login-content {
-  height: 100%;
-} */
-
 .login-content .wrapper {
   max-width: 1920px;
   width: 100%;
@@ -740,7 +732,7 @@ h4 {
   font-size: 17px;
   font-weight: 600;
   text-transform: capitalize;
-  transition: all 0.5s;
+  transition: all 0.5s ease;
 }
 
 .expand {
@@ -786,6 +778,146 @@ h4 {
 
 /*styling for home page end here*/
 /*_______________________________________________*/
+
+/*____________________________________________*/
+/*styling for clubs page start here*/
+.clubs-section h2 {
+  font-size: 65px;
+  text-transform: capitalize;
+}
+
+.clubs-btn {
+  width: 20%;
+  color: #350138;
+}
+
+.clubs-btn span {
+  margin-left: 7%;
+  display: inline-block;
+  transform: rotate(90deg);
+  transition: all 0.5s ease;
+}
+
+.clubs-list {
+  width: 50%;
+  display: none;
+  background-color: #350138;
+  flex-direction: column;
+}
+
+.clubs-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid #FFF;
+  color: #FFF;
+  text-align: center;
+}
+
+.clubs-list a {
+  padding: 10px 0;
+  border-bottom: 1px solid transparent;
+  transition: all 0.5s ease;
+}
+
+.club-list-container {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.show-list {
+  display: flex;
+}
+
+.clubs-btn .rotate {
+  transform: rotate(270deg);
+}
+
+.club-banner figure {
+  max-height: 550px;
+  overflow: hidden;
+}
+
+.club-banner img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.club-info-container {
+  padding: 50px 0;
+  display: none;
+}
+
+.display-info {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.display-info li {
+  padding: 30px 2%;
+  margin: 30px 2% 0 2%;
+  display: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: #E8F0FE;
+  border: 1px solid #76766F;
+  flex-basis: 25%;
+}
+
+.display-info .show {
+  display: block;
+}
+
+.cd-heading,
+.cd-score {
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cd-score {
+  justify-content: space-evenly;
+}
+
+.cd-heading h4 {
+  font-size: 20px;
+  color: #E90152;
+}
+
+.club-name {
+  color: #350138;
+  font-size: 35px;
+  text-align: center;
+}
+
+.cd-score p {
+  color: #350138;
+  font-size: 17px;
+  font-weight: 600;
+  flex-basis: 33.33%;
+  text-align: center;
+}
+
+.cd-score p:nth-child(2) {
+  color: #E90152;
+}
+
+.show-more {
+  padding: 20px 2%;
+}
+
+.show-more a {
+  font-size: 20px;
+  font-weight: 600;
+  color: #350138;
+  text-transform: capitalize;
+  transition: all 0.5s ease;
+}
+
+.show-more .hide {
+  display: none;
+}
+
+/*styling for clubs page end here*/
+/*____________________________________________*/
 
 /*comman important clasess start here*/
 .show {
@@ -992,7 +1124,8 @@ footer {
   }
 
   .read-more a:hover,
-  .copy-right:hover {
+  .copy-right:hover,
+  .show-more a:hover {
     color: #E90152;
     text-decoration: underline;
   }
@@ -1003,6 +1136,18 @@ footer {
   }
 
   /*styling for home page end here*/
+  /*_______________________________________________*/
+
+  /*_______________________________________________*/
+  /*styling for club page start here*/
+
+  .clubs-list a:hover {
+    border-bottom: 1px solid #E90152;
+    color: #E90152;
+    cursor: pointer;
+  }
+
+  /*styling for club page end here*/
   /*_______________________________________________*/
 }
 
