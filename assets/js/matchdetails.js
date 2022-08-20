@@ -18,6 +18,21 @@ function Logout() {
     location.href = "loginpage.html";
 }
 
+let html = document.querySelector("html");
+let hamburger = document.querySelector(".hamburger");
+let hamBar = document.querySelector(".bar");
+let nav = document.querySelector("nav");
+
+//eventlistner for hamburger
+hamBar.addEventListener("click", openMenu);
+
+//function to open hamburger menu
+function openMenu() {
+    html.classList.toggle("active-html");
+    hamburger.classList.toggle("active-ham");
+    nav.classList.toggle("active-nav");
+}
+
 //for keeping current nav tab active
 let currentPageURL = location.href;
 let currentPage = currentPageURL.toString().includes("matchdetails.html");
