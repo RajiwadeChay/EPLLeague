@@ -393,8 +393,10 @@ function clubListPageJS() {
     infoContainer.classList.add("show");
     displayInfo.innerHTML = "";
     clubName.textContent = "";
+    var checkRecord = 0;
     clubData.matches.forEach(function (item) {
       if ((item.team1 == selectedClubName) || (item.team2 == selectedClubName)) {
+        checkRecord++;
         clubName.textContent = selectedClubName;
         showMore.classList.add("show");
         var li = document.createElement("li");
@@ -403,11 +405,12 @@ function clubListPageJS() {
         clubDataLi = displayInfo.childNodes;
         listCount = displayInfo.childNodes.length;
       }
-      // else {
-      //   clubName.textContent = "No data available for " + selectedClubName + " :(";
-      //   showMore.classList.remove("show");
-      // }
     });
+
+    if (checkRecord == 0) {
+      clubName.textContent = "No data available for " + selectedClubName + " :(";
+      showMore.classList.remove("show");
+    }
     showCount = 5;
     showFive(showCount);
   }
@@ -481,4 +484,92 @@ function matchDetailsPageJS() {
       item.classList.remove("active-nav-tab");
     }
   });
+
+  //for getiing data from api 
+  var matcheslist = document.querySelector(".matches-list");
+  var matchesBtn = document.querySelector(".matches-btn button");
+  var matchesBtnSpan = document.querySelector(".matches-btn span");
+  var matchesInfoURL = "https://raw.githubusercontent.com/openfootball/football.json/master/2019-20/en.1.json";
+  var matchesData, listCount, showCount;
+  var displayMatchesInfo = document.querySelector(".display-matches-info");
+  var matchDay = document.querySelector(".matches-day");
+  var infoContainer = document.querySelector(".matches-info-container");
+
+  //Using fetch function to get matches data from api
+  fetch(matchesInfoURL).then(function (response) {
+    //getting data from api
+    return response.json();
+  }).then(function (data) {
+    matchesData = data;
+    //displaying output
+    data.matches.forEach(function (item) {
+      var li = document.createElement("li");
+      li.innerHTML = "<a href='#displayContainer' id='" + item.round + "'>" + item.round + "</a>";
+      matcheslist.appendChild(li);
+    });
+    //for remove duplicate data
+    var elements = matcheslist.childNodes;
+    textArr = [];
+    elements.forEach(function (d, i) {
+      if (textArr.indexOf(d.innerText) > -1) {
+        d.remove();
+      }
+      else {
+        textArr.push(d.innerText);
+      }
+    });
+    matcheslist.innerHTML = "";
+    textArr.forEach(function (item) {
+      var li = document.createElement("li");
+      li.innerHTML = "<a href='#displayContainer' id='" + item + "'>" + item + "</a>";
+      matcheslist.appendChild(li);
+    });
+  });
+
+  //showing matches list onclick of matches btn
+  matchesBtn.addEventListener("click", function () {
+    matcheslist.classList.toggle("show-list");
+    //for ratating dropdown icon on click
+    matchesBtnSpan.classList.toggle("rotate");
+  });
+
+  var elements = matcheslist.childNodes;
+  textArr = [];
+  elements.forEach(function (d, i) {
+    if (textArr.indexOf(d.innerText) > -1) {
+      d.remove();
+    }
+    else {
+      textArr.push(d.innerText);
+    }
+  });
+
+  //eventlistner for matches list
+  matcheslist.addEventListener("click", function (e) {
+    matcheslist.classList.remove("show-list");
+    matchesBtnSpan.classList.remove("rotate");
+    selectedMatchDay(e.target.id);
+  });
+
+  //Function for selected match day
+  function selectedMatchDay(selectedMatchDay) {
+    infoContainer.classList.add("show");
+    displayMatchesInfo.innerHTML = "";
+    matchDay.textContent = "";
+    var checkRecord = 0;
+    matchesData.matches.forEach(function (item) {
+      if (item.round == selectedMatchDay) {
+        checkRecord++;
+        matchDay.textContent = selectedMatchDay;
+        var li = document.createElement("li");
+        li.innerHTML = "<div class='cd-heading'><h4>Round : " + item.round + "</h4><h4>Date : " + item.date + "</h4></div>" + "<div class='cd-score'><a href='clublist.html/#" + item.team1 + "'>" + item.team1 + "</a><span>VS</span><a href='clublist.html/#" + item.team2 + "'>" + item.team2 + "</a></div>";
+        displayMatchesInfo.appendChild(li);
+        li.classList.add("show");
+      }
+    });
+
+    if (checkRecord == 0) {
+      matchDay.textContent = "No data available for " + selectedMatchDay + " :(";
+    }
+  }
 }

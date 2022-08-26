@@ -749,18 +749,21 @@ form button {
 
 /*____________________________________________*/
 /*styling for clubs page start here*/
-.clubs-section {
+.clubs-section,
+.match-details-section {
   position: relative;
 }
 
-.clubs-btn {
+.clubs-btn,
+.matches-btn {
   margin-top: 25px;
   color: #350138;
   font-size: 60px;
   font-weight: 600;
 }
 
-.clubs-btn button {
+.clubs-btn button,
+.matches-btn button {
   border: none;
   background-color: #FFF;
   color: #350138;
@@ -769,7 +772,8 @@ form button {
   text-transform: capitalize;
 }
 
-.clubs-btn span {
+.clubs-btn span,
+.matches-btn span {
   margin-left: 1%;
   display: inline-block;
   cursor: pointer;
@@ -777,7 +781,8 @@ form button {
   transition: all .5s ease;
 }
 
-.clubs-list {
+.clubs-list,
+.matches-list {
   width: 50%;
   display: none;
   position: absolute;
@@ -788,13 +793,15 @@ form button {
   flex-direction: column;
 }
 
-.clubs-list li {
+.clubs-list li,
+.matches-list li {
   padding: 10px 0;
   border-bottom: 1px solid #FFF;
   text-align: center;
 }
 
-.clubs-list a {
+.clubs-list a,
+.matches-list a {
   padding: 10px 0;
   border-bottom: 1px solid transparent;
   color: #FFF;
@@ -803,7 +810,8 @@ form button {
   transition: all 0.5s ease;
 }
 
-.club-list-container {
+.club-list-container,
+.matches-list-container {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
@@ -813,30 +821,35 @@ form button {
   display: flex;
 }
 
-.clubs-btn .rotate {
+.clubs-btn .rotate,
+.matches-btn .rotate {
   -webkit-transform: rotate(270deg);
   -ms-transform: rotate(270deg);
   transform: rotate(270deg);
 }
 
-.club-banner figure {
+.club-banner figure,
+.matches-banner figure {
   max-height: 550px;
   overflow: hidden;
 }
 
-.club-banner img {
+.club-banner img,
+.matches-banner img {
   -o-object-fit: cover;
   object-fit: cover;
   -o-object-position: center;
   object-position: center;
 }
 
-.club-info-container {
+.club-info-container,
+.matches-info-container {
   padding: 50px 0;
   display: none;
 }
 
-.display-info {
+.display-info,
+.display-matches-info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -847,7 +860,8 @@ form button {
   flex-wrap: wrap;
 }
 
-.display-info li {
+.display-info li,
+.display-matches-info li {
   padding: 30px 5%;
   border: 1px solid #76766F;
   margin: 30px 2% 0 2%;
@@ -859,7 +873,8 @@ form button {
   flex-basis: 100%;
 }
 
-.display-info .show {
+.display-info .show,
+.display-matches-info .show {
   display: block;
 }
 
@@ -896,6 +911,13 @@ form button {
   font-size: 17px;
   font-weight: 600;
   text-align: center;
+}
+
+.cd-score a {
+  padding: 0 4%;
+  border: 1px solid transparent;
+  color: #350138;
+  transition: all .5s ease;
 }
 
 .cd-score p:nth-child(2) {
@@ -1171,7 +1193,8 @@ footer {
   /*styling for home page start here*/
   nav a:hover,
   .logout a:hover,
-  .footer-nav a:hover {
+  .footer-nav a:hover,
+  .cd-score a:hover {
     color: #E90152;
     border-bottom: 1px solid #E90152;
   }
