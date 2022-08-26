@@ -342,6 +342,16 @@ nav a,
 =================================*/
 /*_______________________________________________*/
 /*styling for login page start here*/
+html,
+body,
+.container,
+main,
+.login-content {
+  width: 100%;
+  height: 100%;
+}
+
+
 .login-content .wrapper {
   max-width: 1920px;
   width: 100%;
@@ -378,12 +388,11 @@ nav a,
   padding: 10px 2%;
   -ms-flex-preferred-size: 60%;
   flex-basis: 60%;
-  overflow-y: scroll;
 }
 
 h2 {
   margin-top: 25px;
-  font-size: 34px;
+  font-size: 35px;
   font-weight: 900;
   color: #350138;
 }
@@ -395,60 +404,23 @@ h4::first-letter,
   text-transform: capitalize;
 }
 
-/*styling for tab list start here*/
-.tab-list {
-  width: 100%;
-  margin-top: 25px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -ms-flex-pack: distribute;
-  justify-content: space-around;
-}
-
-.tab-list li {
-  width: 100%;
-  padding: 15px 0;
-  background-color: #350138;
-  font-size: 20px;
-  font-weight: 600;
-  text-align: center;
-  -webkit-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
-}
-
-.tab-list a {
-  color: #FFF;
-  text-transform: capitalize;
-}
-
-.tab-list .active-tab {
-  background-color: #E90152;
-}
-
-.tab-content {
-  padding: 30px 5%;
-  margin-top: 25px;
-  display: none;
-  background-color: #E8F0FE;
-  border: 1px solid #76766F;
-}
-
-/*styling for tab list end here*/
-/*styling for tab content start here*/
 h3 {
+  margin-top: 25px;
   font-size: 30px;
   font-weight: 600;
   color: #E90152;
 }
 
 /*styling for form start here*/
-form div {
+form {
+  padding: 20px 5%;
+  border: 1px solid #76766F;
   margin-top: 20px;
+  background-color: #E8F0FE;
+}
+
+form div {
+  margin-bottom: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -467,119 +439,40 @@ form label {
 }
 
 form input {
-  padding: 10px 2%;
-  font-size: 17px;
-  background-color: #E8F0FE;
+  padding: 10px 0;
   border: none;
   border-bottom: 1px solid #76766F;
+  font-size: 17px;
+  background-color: #E8F0FE;
+  transition: all .5s ease;
+}
+
+form input:focus {
+  border-bottom: 1px solid #E90152;
+  outline: none;
 }
 
 .err-span {
-  display: none;
   padding-top: 5px;
   color: #FF0000;
-  font-size: 15px
+  font-size: 15px;
+  visibility: hidden;
 }
 
 form button {
   padding: 15px 5%;
-  background-color: #350138;
   border: none;
+  background-color: #350138;
   color: #FFF;
   font-size: 17px;
   font-weight: 600;
   text-transform: capitalize;
-  -webkit-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
-}
-
-.remember-me-checkbox,
-.forgot-pswd {
-  display: inline-block;
-  width: 49%;
-}
-
-.remember-me-checkbox label {
-  padding: 0;
-}
-
-.forgot-pswd {
-  text-align: end;
-}
-
-.forgot-pswd a {
-  color: #350138;
-  -webkit-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
-}
-
-h4 {
-  padding-bottom: 10px;
-  color: #350138;
-  font-size: 17px;
-  font-weight: 600;
-}
-
-.pswd-msg {
-  display: none;
-}
-
-.pswd-msg p {
-  padding-bottom: 5px;
-  color: #350138;
-  font-size: 15px;
-}
-
-.pswd-msg p::before {
-  padding-right: 2%;
-  font-family: "fontAwesome";
-  font-size: 15px;
-  text-indent: 0;
-}
-
-.invalid::before {
-  content: "\f00d";
-  color: #350138;
-}
-
-.valid::before {
-  content: "\f00c";
-  color: #E90152;
-}
-
-.gender-title {
-  padding: 10px 0;
-  color: #350138;
-  font-size: 17px;
-  font-weight: 600;
-  text-transform: capitalize;
-}
-
-.gender-radio-grup div {
-  margin: 0;
-}
-
-.gender-radio-grup label,
-.gender-radio-grup input {
-  padding: 0 2%;
-  display: inline-block;
-}
-
-.gender-radio-grup div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  padding-bottom: 5px;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
+  -webkit-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  transition: all .5s ease;
 }
 
 /*styling for form end here*/
-/*styling for tab content end here*/
 /*styling for login info div end here*/
 
 .alert {
@@ -589,9 +482,9 @@ h4 {
   background-color: #E90152;
   color: #FFF;
   opacity: 1;
-  -webkit-transition: opacity 0.6s;
-  -o-transition: opacity 0.6s;
-  transition: opacity 0.6s;
+  -webkit-transition: opacity .6s ease;
+  -o-transition: opacity .6s ease;
+  transition: opacity .6s ease;
 }
 
 .alert h3 {
@@ -607,9 +500,9 @@ h4 {
   font-weight: bold;
   float: right;
   line-height: 20px;
-  -webkit-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: .3s ease;
+  -o-transition: .3s ease; 
+  transition: .3s ease;
 }
 
 /*styling for login page end here*/
@@ -1055,6 +948,9 @@ h4 {
   animation: fadeInOut 1s ease forwards;
 }
 
+.visible {
+  visibility: visible;
+}
 /*comman important clasess end here*/
 /*=================================
   main styling ends here

@@ -36,102 +36,25 @@
             </div>
             <!--alert message end here-->
             <h2>welcome to <span class="text-cap">english premier league</span></h2>
-            <!--tab list start here-->
-            <ul class="tab-list">
-              <li class="active-tab">
-                <a href="#FIXME" title="Sign In" target="_self">sign in</a>
-              </li>
-              <li>
-                <a href="#FIXME" title="Sign Up" target="_self">sign up</a>
-              </li>
-            </ul>
-            <!--tab list end here-->
             <!--tab content start here-->
-            <div class="tab-content show">
-              <h3>sign in to existing account</h3>
-              <!--sign in form start here-->
-              <form action="#FIXME" name="signInForm" class="sign-in-form">
-                <div class="email">
-                  <label for="email">email address : </label>
-                  <input type="email" id="email" name="email" placeholder="Enter your email address">
-                  <span class="err-span">error</span>
-                </div>
-                <div class="pswd">
-                  <label for="pswd">password : </label>
-                  <input type="password" id="pswd" name="pswd" placeholder="Enter your password" autocomplete="on">
-                  <span class="err-span">error</span>
-                </div>
-                <div>
-                  <button type="submit" class="sign-in-btn">sign in</button>
-                </div>
-              </form>
-              <!--sign in form end here-->
-            </div>
-            <div class="tab-content">
-              <h3>sign up to create new account</h3>
-              <!--sign up form start here-->
-              <form action="#FIXME" name="signUpForm" class="sign-up-form">
-                <div class="first-name">
-                  <label for="fName">first name : </label>
-                  <input type="text" id="fName" name="fName" placeholder="Enter your first name">
-                  <span class="err-span">error</span>
-                </div>
-                <div class="last-name">
-                  <label for="lName">last name : </label>
-                  <input type="text" id="lName" name="lName" placeholder="Enter your last name">
-                  <span class="err-span">error</span>
-                </div>
-                <div class="email">
-                  <label for="uEmail">email address : </label>
-                  <input type="email" id="uEmail" name="uEmail" placeholder="Enter your email address">
-                  <span class="err-span">error</span>
-                </div>
-                <div class="pswd">
-                  <label for="newPswd">new password : </label>
-                  <input type="password" id="newPswd" name="newPswd" placeholder="Enter your new password"
-                    autocomplete="on">
-                  <span class="err-span">error</span>
-                </div>
-                <div class="pswd-msg">
-                  <h4>password must contain the following : </h4>
-                  <p class="invalid letter">a lowercase letter</p>
-                  <p class="invalid capital">a capital (uppercase) letter</p>
-                  <p class="invalid number">a number</p>
-                  <p class="invalid length">minimum 8 characters</p>
-                </div>
-                <div class="gender-radio-grup">
-                  <span class="gender-title">gender : </span>
-                  <div>
-                    <input type="radio" id="male" name="gender" value="Male">
-                    <label for="male">male</label>
-                  </div>
-                  <div>
-                    <input type="radio" id="female" name="gender" value="Female">
-                    <label for="female">female</label>
-                  </div>
-                  <div>
-                    <input type="radio" id="other" name="gender" value="Other">
-                    <label for="other">other</label>
-                  </div>
-                  <span class="err-span">error</span>
-                </div>
-                <div class="dob">
-                  <label for="dob">date of birth : </label>
-                  <input type="date" id="dob" name="dob">
-                  <span class="err-span">error</span>
-                </div>
-                <div class="phone">
-                  <label for="phone">mobile number : </label>
-                  <input type="tel" id="phone" name="phone" placeholder="Enter your mobile number">
-                  <span class="err-span">error</span>
-                </div>
-                <div>
-                  <button type="submit" class="sign-up-btn">sign up</button>
-                </div>
-              </form>
-              <!--sign up form end here-->
-            </div>
-            <!--tab content end here-->
+            <h3>sign in to existing account</h3>
+            <!--sign in form start here-->
+            <form action="#FIXME" method="post" name="signInForm" class="sign-in-form">
+              <div class="email">
+                <label for="email">email address : </label>
+                <input type="email" id="email" name="email" placeholder="Enter your email address">
+                <span class="err-span">error</span>
+              </div>
+              <div class="pswd">
+                <label for="pswd">password : </label>
+                <input type="password" id="pswd" name="pswd" placeholder="Enter your password" autocomplete="on">
+                <span class="err-span">error</span>
+              </div>
+              <div>
+                <button type="submit" class="sign-in-btn">sign in</button>
+              </div>
+            </form>
+            <!--sign in form end here-->
           </div>
           <!--login info end here-->
         </div>

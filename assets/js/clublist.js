@@ -1,8 +1,8 @@
 var logOutBtn = document.querySelector(".logout a");
-let uEmail = localStorage.getItem('uEmail') ? localStorage.getItem('uEmail') : '';
+var userEmail = localStorage.getItem('currentUserEmail') ? localStorage.getItem('currentUserEmail') : '';
 
 //for checking user is logged in or not
-if (uEmail == '') {
+if (userEmail == '') {
     alert('You need to login first!');
     location.href = "loginpage.html";
 }
@@ -12,9 +12,8 @@ logOutBtn.addEventListener("click", Logout);
 
 //function to logout
 function Logout() {
-    localStorage.removeItem('fName');
-    localStorage.removeItem('uEmail');
-    localStorage.removeItem('newPswd');
+    localStorage.removeItem('currentUserEmail');
+    localStorage.removeItem('currentUserPswd');
     location.href = "loginpage.html";
 }
 
