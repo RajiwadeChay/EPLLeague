@@ -1,5 +1,12 @@
 var body = document.querySelector("body");
 
+//Preventing site from going back to login page
+function preventBack() {
+  window.history.forward();
+}
+setTimeout(preventBack(), 0);
+window.onunload = function () { null };
+
 //condition for selecting which page js should work
 if (body.classList.contains("index-page")) {
   loginPageJS();
@@ -304,10 +311,10 @@ function clubListPageJS() {
     location.href = "EPLLeague/../index.html";
   }
 
-  let html = document.querySelector("html");
-  let hamburger = document.querySelector(".hamburger");
-  let hamBar = document.querySelector(".bar");
-  let nav = document.querySelector("nav");
+  var html = document.querySelector("html");
+  var hamburger = document.querySelector(".hamburger");
+  var hamBar = document.querySelector(".bar");
+  var nav = document.querySelector("nav");
 
   //eventlistner for hamburger
   hamBar.addEventListener("click", openMenu);
@@ -320,13 +327,13 @@ function clubListPageJS() {
   }
 
   //for keeping current nav tab active
-  let currentPageURL = location.href;
-  let currentPage = currentPageURL.toString().includes("clublist.html");
-  let navUl = document.querySelector("nav ul");
-  const navTabArr = document.querySelectorAll("nav a");
+  var currentPageURL = location.href;
+  var currentPage = currentPageURL.toString().includes("clublist.html");
+  var navUl = document.querySelector("nav ul");
+  var navTabArr = document.querySelectorAll("nav a");
 
   navTabArr.forEach(function (item) {
-    let tabHref = item.href.toString().includes("clublist.html");
+    var tabHref = item.href.toString().includes("clublist.html");
     if (currentPage == true && tabHref == true) {
       item.classList.add("active-nav-tab");
     } else {
@@ -335,82 +342,71 @@ function clubListPageJS() {
   });
 
   //for getiing data from api 
-  let clublist = document.querySelector(".clubs-list");
-  let clubsBtn = document.querySelector(".clubs-btn");
-  let clubsBtnSpan = document.querySelector(".clubs-btn span");
-  let clubListURL = "https://raw.githubusercontent.com/openfootball/football.json/master/2015-16/en.1.clubs.json";
-  let clubInfoURL = "https://raw.githubusercontent.com/openfootball/football.json/master/2019-20/en.1.json";
+  var clublist = document.querySelector(".clubs-list");
+  var clubsBtn = document.querySelector(".clubs-btn button");
+  var clubsBtnSpan = document.querySelector(".clubs-btn span");
+  var clubListURL = "https://raw.githubusercontent.com/openfootball/football.json/master/2015-16/en.1.clubs.json";
+  var clubInfoURL = "https://raw.githubusercontent.com/openfootball/football.json/master/2019-20/en.1.json";
   var clubData, listCount, clubDataLi, showCount;
-  let displayInfo = document.querySelector(".display-info");
-  let clubName = document.querySelector(".club-name");
-  let infoContainer = document.querySelector(".club-info-container");
-  let showMore = document.querySelector(".show-more a");
+  var displayInfo = document.querySelector(".display-info");
+  var clubName = document.querySelector(".club-name");
+  var infoContainer = document.querySelector(".club-info-container");
+  var showMore = document.querySelector(".show-more a");
 
-  // function to get club list from api defining async function
-  async function getClubsList(url) {
-
-    // Storing response
-    const response = await fetch(url);
-
-    // Storing data in form of JSON
-    let data = await response.json();
+  //Using fetch function to get club data from api
+  fetch(clubListURL).then(function (response) {
+    //getting data from api
+    return response.json();
+  }).then(function (data) {
     //displaying output
     data.clubs.forEach(function (item) {
-      let li = document.createElement("li");
-      let a = document.createElement("a");
-      a.textContent = item.name;
-      li.appendChild(a);
+      var li = document.createElement("li");
+      li.innerHTML = "<a href='#displayContainer' id='" + item.name + "'>" + item.name + "</a>";
       clublist.appendChild(li);
-      a.addEventListener("click", selectedClub);
     });
-  }
-  // Calling that async function
-  getClubsList(clubListURL);
+  });
 
-  // function to get club info from api defining async function
-  async function getClubInfo(url) {
-
-    // Storing response
-    const response = await fetch(url);
-
-    // Storing data in form of JSON
-    let data = await response.json();
-    showClubInfo(data);
-  }
-  // Calling that async function
-  getClubInfo(clubInfoURL);
-
-  //function for showing club info 
-  function showClubInfo(data) {
+  //Using fetch function to get club info from api
+  fetch(clubInfoURL).then(function (response) {
+    //getting data from api
+    return response.json();
+  }).then(function (data) {
     clubData = data;
-  }
+  });
 
   //showing club list onclick of clubs btn
   clubsBtn.addEventListener("click", function () {
-    clublist.classList.toggle("show-list");
+    clublist.classList.add("show-list");
     //for ratating dropdown icon on click
-    clubsBtnSpan.classList.toggle("rotate");
+    clubsBtnSpan.classList.add("rotate");
+  });
+
+  //eventlistner for club list 
+  clublist.addEventListener("click", function (e) {
+    clublist.classList.remove("show-list");
+    clubsBtnSpan.classList.remove("rotate");
+    selectedClub(e.target.id);
   });
 
   //Function for selected club 
-  function selectedClub() {
-    let selectedClubName = this;
-
+  function selectedClub(selectedClubName) {
     infoContainer.classList.add("show");
-
+    displayInfo.innerHTML = "";
+    clubName.textContent = "";
     clubData.matches.forEach(function (item) {
-      if (item.team1 == selectedClubName.textContent || item.team2 == selectedClubName.textContent) {
-        clubName.textContent = selectedClubName.textContent;
-        let li = document.createElement("li");
-        let clubDetails = '<div class="cd-heading"><h4> Round : ' + item.round + '</h4>' +
-          '<h4> Date : ' + item.date + '</h4></div>' +
-          '<div class = "cd-score"><p>' + item.team1 + '</p>' + '<p>VS</p>' +
-          '<p>' + item.team2 + '</p>';
-        li.innerHTML = clubDetails;
+      if ((item.team1 == selectedClubName) || (item.team2 == selectedClubName)) {
+        clubName.textContent = selectedClubName;
+        showMore.classList.add("show");
+        var li = document.createElement("li");
+        li.innerHTML = "<div class='cd-heading'><h4>Round : " + item.round + "</h4><h4>Date : " + item.date + "</h4></div>" + "<div class='cd-score'><span>" + item.team1 + "</span><span>VS</span><span>" + item.team2 + "</span></div>";
         displayInfo.appendChild(li);
         clubDataLi = displayInfo.childNodes;
         listCount = displayInfo.childNodes.length;
       }
+      // else {
+      //   clubName.textContent = "No data available for " + selectedClubName + " :(";
+      //   showMore.classList.remove("show");
+      // }
     });
     showCount = 5;
     showFive(showCount);
@@ -418,7 +414,7 @@ function clubListPageJS() {
 
   //function to show five 
   function showFive(count) {
-    for (let i = 0; i < count; i++) {
+    for (var i = 0; i < count; i++) {
       clubDataLi[i].classList.add("show");
       if (i == listCount - 1) {
         showMore.parentElement.classList.add("hide");
@@ -456,10 +452,10 @@ function matchDetailsPageJS() {
     location.href = "EPLLeague/../index.html";
   }
 
-  let html = document.querySelector("html");
-  let hamburger = document.querySelector(".hamburger");
-  let hamBar = document.querySelector(".bar");
-  let nav = document.querySelector("nav");
+  var html = document.querySelector("html");
+  var hamburger = document.querySelector(".hamburger");
+  var hamBar = document.querySelector(".bar");
+  var nav = document.querySelector("nav");
 
   //eventlistner for hamburger
   hamBar.addEventListener("click", openMenu);
@@ -472,13 +468,13 @@ function matchDetailsPageJS() {
   }
 
   //for keeping current nav tab active
-  let currentPageURL = location.href;
-  let currentPage = currentPageURL.toString().includes("matchdetails.html");
-  let navUl = document.querySelector("nav ul");
-  const navTabArr = document.querySelectorAll("nav a");
+  var currentPageURL = location.href;
+  var currentPage = currentPageURL.toString().includes("matchdetails.html");
+  var navUl = document.querySelector("nav ul");
+  var navTabArr = document.querySelectorAll("nav a");
 
   navTabArr.forEach(function (item) {
-    let tabHref = item.href.toString().includes("matchdetails.html");
+    var tabHref = item.href.toString().includes("matchdetails.html");
     if (currentPage == true && tabHref == true) {
       item.classList.add("active-nav-tab");
     } else {
