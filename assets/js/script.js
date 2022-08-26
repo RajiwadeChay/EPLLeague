@@ -15,17 +15,17 @@ if (body.classList.contains("index-page")) {
 function loginPageJS() {
   //for sign in form validation
   var signInForm = document.querySelector(".sign-in-form");
-  var signInBtn = document.querySelector(".sign-in-btn");
   var email = document.getElementById("email");
   var pswd = document.getElementById("pswd");
+
+  //Saving default user details
+  var userEmail = "user1@gmail.com";
+  var userPswd = "User0001";
 
   //For alert messages
   var close = document.querySelector(".closebtn");
   var alertBox = document.querySelector(".alert");
   var alertMsg = document.querySelector(".alert h3");
-
-  var userEmail = "user1@gmail.com";
-  var userPswd = "User0001";
 
   close.addEventListener('click', function () {
     var parentAlert = close.parentElement;
@@ -50,7 +50,7 @@ function loginPageJS() {
         "userPswd": userPswd,
       })
       localStorage.setItem("users", JSON.stringify(userRecords));
-      location.href = "../index.html";
+      location.href = "EPLLeague/../index.html";
     }
 
   }
@@ -61,7 +61,7 @@ function loginPageJS() {
   //for keeping user log in if he alerady logged in
   var checkUserEmail = localStorage.getItem('userEmail') ? localStorage.getItem('userEmail') : '';
   if (checkUserEmail != '') {
-    location.href = "../homepage.html";
+    location.href = "EPLLeague/../homepage.html";
   }
 
   //function for checking input
@@ -101,7 +101,7 @@ function loginPageJS() {
       var currentUser = currentRecords.filter(function (v) { return v.userEmail == email && v.userPswd == pswd })[0];
       localStorage.setItem('currentUserEmail', currentUser.userEmail);
       localStorage.setItem('currentUserPswd', currentUser.userPswd);
-      location.href = "../homepage.html";
+      location.href = "EPLLeague/../homepage.html";
     }
     else {
       alertMsg.textContent = "Sign in Failed! Please check details and try again";
@@ -138,12 +138,12 @@ function homePageJS() {
   var logOutBtn = document.querySelector(".logout a");
   var userEmail = localStorage.getItem('currentUserEmail') ? localStorage.getItem('currentUserEmail') : '';
 
-  const readMoreArr = document.querySelectorAll("a[title='Read More']");
+  var readMoreArr = document.querySelectorAll("a[title='Read More']");
 
   //for checking user is logged in or not
   if (userEmail == '') {
     alert('You need to login first!');
-    location.href = "index.html";
+    location.href = "EPLLeague/../index.html";
   }
 
   //logout event listener
@@ -153,12 +153,12 @@ function homePageJS() {
   function Logout() {
     localStorage.removeItem('currentUserEmail');
     localStorage.removeItem('currentUserPswd');
-    location.href = "index.html";
+    location.href = "EPLLeague/../index.html";
   }
 
   readMoreArr.forEach(function (item) {
     item.addEventListener("click", function () {
-      let parentDiv = item.parentElement.parentElement;
+      var parentDiv = item.parentElement.parentElement;
       parentDiv.classList.toggle("expand");
       if (parentDiv.classList.contains("expand")) {
         item.textContent = "Read Less";
@@ -168,13 +168,13 @@ function homePageJS() {
     })
   });
 
-  const sliderList = document.querySelector(".slider-container ul");
-  const slidesArr = Array.from(sliderList.children);
-  const prevBtn = document.querySelector(".prev-btn");
-  const nextBtn = document.querySelector(".next-btn");
-  const carousel = document.querySelector(".carousel");
-  const dotArr = Array.from(carousel.children);
-  let count = 1;
+  var sliderList = document.querySelector(".slider-container ul");
+  var slidesArr = Array.from(sliderList.children);
+  var prevBtn = document.querySelector(".prev-btn");
+  var nextBtn = document.querySelector(".next-btn");
+  var carousel = document.querySelector(".carousel");
+  var dotArr = Array.from(carousel.children);
+  var count = 1;
 
   prevBtn.addEventListener("click", minusCount);
   nextBtn.addEventListener("click", pluseCount);
@@ -239,10 +239,10 @@ function homePageJS() {
     }
   }
 
-  let html = document.querySelector("html");
-  let hamburger = document.querySelector(".hamburger");
-  let hamBar = document.querySelector(".bar");
-  let nav = document.querySelector("nav");
+  var html = document.querySelector("html");
+  var hamburger = document.querySelector(".hamburger");
+  var hamBar = document.querySelector(".bar");
+  var nav = document.querySelector("nav");
 
   //eventlistner for hamburger
   hamBar.addEventListener("click", openMenu);
@@ -255,13 +255,13 @@ function homePageJS() {
   }
 
   //for keeping current nav tab active
-  let currentPageURL = location.href;
-  let currentPage = currentPageURL.toString().includes("homepage.html");
-  let navUl = document.querySelector("nav ul");
-  const navTabArr = document.querySelectorAll("nav a");
+  var currentPageURL = location.href;
+  var currentPage = currentPageURL.toString().includes("homepage.html");
+  var navUl = document.querySelector("nav ul");
+  var navTabArr = document.querySelectorAll("nav a");
 
   navTabArr.forEach(function (item) {
-    let tabHref = item.href.toString().includes("homepage.html");
+    var tabHref = item.href.toString().includes("homepage.html");
     if (currentPage == true && tabHref == true) {
       item.classList.add("active-nav-tab");
     } else {
@@ -278,7 +278,7 @@ function clubListPageJS() {
   //for checking user is logged in or not
   if (userEmail == '') {
     alert('You need to login first!');
-    location.href = "index.html";
+    location.href = "EPLLeague/../index.html";
   }
 
   //logout event listener
@@ -288,7 +288,7 @@ function clubListPageJS() {
   function Logout() {
     localStorage.removeItem('currentUserEmail');
     localStorage.removeItem('currentUserPswd');
-    location.href = "index.html";
+    location.href = "EPLLeague/../index.html";
   }
 
   let html = document.querySelector("html");
@@ -430,7 +430,7 @@ function matchDetailsPageJS() {
   //for checking user is logged in or not
   if (userEmail == '') {
     alert('You need to login first!');
-    location.href = "index.html";
+    location.href = "EPLLeague/../index.html";
   }
 
   //logout event listener
@@ -440,7 +440,7 @@ function matchDetailsPageJS() {
   function Logout() {
     localStorage.removeItem('currentUserEmail');
     localStorage.removeItem('currentUserPswd');
-    location.href = "index.html";
+    location.href = "EPLLeague/../index.html";
   }
 
   let html = document.querySelector("html");
