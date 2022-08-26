@@ -376,9 +376,9 @@ function clubListPageJS() {
 
   //showing club list onclick of clubs btn
   clubsBtn.addEventListener("click", function () {
-    clublist.classList.add("show-list");
+    clublist.classList.toggle("show-list");
     //for ratating dropdown icon on click
-    clubsBtnSpan.classList.add("rotate");
+    clubsBtnSpan.classList.toggle("rotate");
   });
 
   //eventlistner for club list 
