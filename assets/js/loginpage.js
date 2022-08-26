@@ -35,7 +35,7 @@ function saveData() {
       "userPswd": userPswd,
     })
     localStorage.setItem("users", JSON.stringify(userRecords));
-    location.href = "../loginpage.html";
+    location.href = "../index.html";
   }
 
 }

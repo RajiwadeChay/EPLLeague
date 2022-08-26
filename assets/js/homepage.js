@@ -6,7 +6,7 @@ const readMoreArr = document.querySelectorAll("a[title='Read More']");
 //for checking user is logged in or not
 if (userEmail == '') {
   alert('You need to login first!');
-  location.href = "loginpage.html";
+  location.href = "index.html";
 }
 
 //logout event listener
@@ -16,7 +16,7 @@ logOutBtn.addEventListener("click", Logout);
 function Logout() {
   localStorage.removeItem('currentUserEmail');
   localStorage.removeItem('currentUserPswd');
-  location.href = "loginpage.html";
+  location.href = "index.html";
 }
 
 readMoreArr.forEach(function (item) {
