@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
 </head>
 
-<body>
+<body class="match-details-page">
   <!--container start here-->
   <div class="container">
     <!--header start here-->
@@ -55,7 +55,23 @@
 
     <!--main start here-->
     <main>
-
+      <section class="match-details-section">
+        <div class="wrapper">
+          <div class="matches-btn"><button>matches</button><span>&#10095;</span></div>
+          <div class="matches-list-container">
+            <ul class="matches-list"></ul>
+          </div>
+          <div class="matches-info-container" id="displayContainer">
+            <h3 class="matches-day">match day</h3>
+            <ul class="display-matches-info"></ul>
+          </div>
+        </div>
+      </section>
+      <div class="matches-banner">
+        <figure>
+          <img src="assets/images/parallaxImg1.jpg" alt="Goalkeeper Image">
+        </figure>
+      </div>
     </main>
     <!--main end here-->
 
@@ -101,7 +117,7 @@
     <!--footer end here-->
   </div>
   <!--container end here-->
-  <script src="assets/js/matchdetails.js"></script>
+  <script src="assets/js/script.js"></script>
 </body>
 
 </html>

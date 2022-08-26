@@ -1,3 +1,3 @@
-Creds to log in :- 
-email :- rocky@gmail.com
-pswd :- Rocky051
+User Creds :-
+Email :- user1@gmail.com;
+Password :- User0001;
