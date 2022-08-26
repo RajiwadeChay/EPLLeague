@@ -22,6 +22,19 @@ function loginPageJS() {
   var userEmail = "user1@gmail.com";
   var userPswd = "User0001";
 
+  //for keeping banner image of full height
+  var html = document.querySelector("html");
+  var body = document.querySelector("body");
+  var container = document.querySelector(".container");
+  var main = document.querySelector("main");
+  var loginContent = document.querySelector(".login-content");
+
+  html.classList.add("full-height");
+  body.classList.add("full-height");
+  container.classList.add("full-height");
+  main.classList.add("full-height");
+  loginContent.classList.add("full-height");
+
   //For alert messages
   var close = document.querySelector(".closebtn");
   var alertBox = document.querySelector(".alert");

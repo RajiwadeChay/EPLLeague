@@ -342,14 +342,6 @@ nav a,
 =================================*/
 /*_______________________________________________*/
 /*styling for login page start here*/
-html,
-body,
-.container,
-main,
-.login-content {
-  width: 100%;
-  height: 100%;
-}
 
 
 .login-content .wrapper {
@@ -501,7 +493,7 @@ form button {
   float: right;
   line-height: 20px;
   -webkit-transition: .3s ease;
-  -o-transition: .3s ease; 
+  -o-transition: .3s ease;
   transition: .3s ease;
 }
 
@@ -541,21 +533,15 @@ form button {
 }
 
 .slide:nth-child(1) {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.3))), url('/assets/images/sliderImg1.jpg');
-  background-image: -o-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/assets/images/sliderImg1.jpg');
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/assets/images/sliderImg1.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../images/sliderImg1.jpg');
 }
 
 .slide:nth-child(2) {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.3))), url('/assets/images/sliderImg2.jpg');
-  background-image: -o-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/assets/images/sliderImg2.jpg');
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/assets/images/sliderImg2.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../images/sliderImg2.jpg');
 }
 
 .slide:nth-child(3) {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.3))), url('/assets/images/sliderImg3.jpg');
-  background-image: -o-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/assets/images/sliderImg3.jpg');
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/assets/images/sliderImg3.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../images/sliderImg3.jpg');
 }
 
 .slide h2 {
@@ -750,7 +736,7 @@ form button {
 
 .epl-banner div {
   padding: 120px 0;
-  background-image: url(/assets/images/EPLTransparentLogo.png);
+  background-image: url(../images/EPLTransparentLogo.png);
   background-position: center;
   background-repeat: no-repeat;
   text-indent: -9999px;
@@ -935,6 +921,11 @@ form button {
 /*____________________________________________*/
 
 /*comman important clasess start here*/
+.full-height {
+  width: 100%;
+  height: 100%;
+}
+
 .show {
   display: block;
 }
@@ -951,6 +942,7 @@ form button {
 .visible {
   visibility: visible;
 }
+
 /*comman important clasess end here*/
 /*=================================
   main styling ends here
