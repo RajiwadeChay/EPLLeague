@@ -848,6 +848,10 @@ form button {
   display: none;
 }
 
+.matches-info-container h3 {
+  text-align: center;
+}
+
 .display-info,
 .display-matches-info {
   display: -webkit-box;
@@ -910,6 +914,7 @@ form button {
   color: #350138;
   font-size: 17px;
   font-weight: 600;
+  flex-basis: 33.33%;
   text-align: center;
 }
 
@@ -917,7 +922,20 @@ form button {
   padding: 0 4%;
   border: 1px solid transparent;
   color: #350138;
+  flex-basis: 33.33%;
   transition: all .5s ease;
+}
+
+.cd-score span:first-child {
+  text-align: start;
+}
+
+.cd-score span:last-child {
+  text-align: end;
+}
+
+.cd-score a:last-child {
+  text-align: end;
 }
 
 .cd-score p:nth-child(2) {
@@ -1193,8 +1211,7 @@ footer {
   /*styling for home page start here*/
   nav a:hover,
   .logout a:hover,
-  .footer-nav a:hover,
-  .cd-score a:hover {
+  .footer-nav a:hover {
     color: #E90152;
     border-bottom: 1px solid #E90152;
   }
@@ -1203,7 +1220,8 @@ footer {
     border: 1px solid #E90152;
   }
 
-  .slider-btns a:hover {
+  .slider-btns a:hover,
+  .cd-score a:hover {
     color: #E90152;
   }
 
