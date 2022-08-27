@@ -819,6 +819,8 @@ form button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  max-height: 420px;
+  overflow-y: scroll;
 }
 
 .clubs-btn .rotate,
