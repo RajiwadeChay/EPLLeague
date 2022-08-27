@@ -79,7 +79,7 @@ function loginPageJS() {
   saveData();
 
   //for keeping user log in if he alerady logged in
-  var checkUserEmail = localStorage.getItem('userEmail') ? localStorage.getItem('userEmail') : '';
+  var checkUserEmail = localStorage.getItem('currentUserEmail') ? localStorage.getItem('currentUserEmail') : '';
   if (checkUserEmail != '') {
     location.href = "EPLLeague/../homepage.html";
   }
@@ -372,7 +372,18 @@ function clubListPageJS() {
     return response.json();
   }).then(function (data) {
     clubData = data;
+    //calling function for displaying club selected in match details page
+    if (localStorage.getItem("clubName") != null) {
+      club();
+    }
   });
+
+  //function for displaying club selected in match details page
+  function club() {
+    var club = localStorage.getItem("clubName");
+    localStorage.removeItem("clubName");
+    selectedClub(club);
+  }
 
   //showing club list onclick of clubs btn
   clubsBtn.addEventListener("click", function () {
@@ -402,6 +413,8 @@ function clubListPageJS() {
         var li = document.createElement("li");
         li.innerHTML = "<div class='cd-heading'><h4>Round : " + item.round + "</h4><h4>Date : " + item.date + "</h4></div>" + "<div class='cd-score'><span>" + item.team1 + "</span><span>VS</span><span>" + item.team2 + "</span></div>";
         displayInfo.appendChild(li);
+      }
+      if (displayInfo.childNodes.length > 1) {
         clubDataLi = displayInfo.childNodes;
         listCount = displayInfo.childNodes.length;
       }
@@ -411,8 +424,10 @@ function clubListPageJS() {
       clubName.textContent = "No data available for " + selectedClubName + " :(";
       showMore.classList.remove("show");
     }
-    showCount = 5;
-    showFive(showCount);
+    if (displayInfo.childNodes.length > 1) {
+      showCount = 5;
+      showFive(showCount);
+    }
   }
 
   //function to show five 
@@ -562,7 +577,7 @@ function matchDetailsPageJS() {
         checkRecord++;
         matchDay.textContent = selectedMatchDay;
         var li = document.createElement("li");
-        li.innerHTML = "<div class='cd-heading'><h4>Round : " + item.round + "</h4><h4>Date : " + item.date + "</h4></div>" + "<div class='cd-score'><a href='clublist.html/#" + item.team1 + "'>" + item.team1 + "</a><span>VS</span><a href='clublist.html/#" + item.team2 + "'>" + item.team2 + "</a></div>";
+        li.innerHTML = "<div class='cd-heading'><h4>Round : " + item.round + "</h4><h4>Date : " + item.date + "</h4></div>" + "<div class='cd-score'><a href='EPLLeague/../clublist.html#displayContainer' id='" + item.team1 + "'>" + item.team1 + "</a><span>VS</span><a href='EPLLeague/../clublist.html#displayContainer' id='" + item.team2 + "'>" + item.team2 + "</a></div>";
         displayMatchesInfo.appendChild(li);
         li.classList.add("show");
       }
@@ -572,4 +587,9 @@ function matchDetailsPageJS() {
       matchDay.textContent = "No data available for " + selectedMatchDay + " :(";
     }
   }
+
+  //Adding club name to local storage to show it's info on club page
+  displayMatchesInfo.addEventListener("click", function (e) {
+    localStorage.setItem("clubName", e.target.id);
+  });
 }
