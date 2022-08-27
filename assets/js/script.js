@@ -54,33 +54,9 @@ function loginPageJS() {
 
   pswd.maxLength = 8;
 
-  //function to save data in local storage 
-  function saveData() {
-    //creating new array for user record
-    var userRecords = new Array();
-    userRecords = JSON.parse(localStorage.getItem("users")) ? JSON.parse(localStorage.getItem("users")) : [];
-
-    //checking for duplicate data
-    if (userRecords.some(function (v) { return v.userEmail == userEmail && v.userPswd == userPswd })) {
-      // alert("Duplicate data! please enter another details");
-    }
-    else {
-      userRecords.push({
-        "userEmail": userEmail,
-        "userPswd": userPswd,
-      })
-      localStorage.setItem("users", JSON.stringify(userRecords));
-      location.href = "EPLLeague/../index.html";
-    }
-
-  }
-
-  //saving user data
-  saveData();
-
   //for keeping user log in if he alerady logged in
-  var checkUserEmail = localStorage.getItem('currentUserEmail') ? localStorage.getItem('currentUserEmail') : '';
-  if (checkUserEmail != '') {
+  var checkUser = localStorage.getItem('isLoggedIN') ? localStorage.getItem('isLoggedIN') : '';
+  if (checkUser != '') {
     location.href = "EPLLeague/../homepage.html";
   }
 
@@ -106,7 +82,7 @@ function loginPageJS() {
     var valid;
     valid = checkInput(email, /^([_\-\.0-9a-zA-Z]+)@([_\-\.a-zA-Z]+)\.([a-zA-Z]){2,7}$/, "Please enter your email id", "Please enter valid email id");
 
-    valid = checkInput(pswd, /^(?=.{8,8}$)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*$/, "Please enter your password", "Please enter valid password");
+    valid = checkInput(pswd, /^(?=.{6,8}$)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*$/, "Please enter your password", "A password must contain atleast 1 Uppercase, 1 Lowercase, 1 number and it's length must be between 6 to 8 charaters");
     return valid;
   }
 
@@ -115,15 +91,10 @@ function loginPageJS() {
     email = email.value;
     pswd = pswd.value;
 
-    var currentRecords = new Array();
-    currentRecords = JSON.parse(localStorage.getItem("users")) ? JSON.parse(localStorage.getItem("users")) : [];
-    if (currentRecords.some(function (v) { return v.userEmail == email && v.userPswd == pswd })) {
-      var currentUser = currentRecords.filter(function (v) { return v.userEmail == email && v.userPswd == pswd })[0];
-      localStorage.setItem('currentUserEmail', currentUser.userEmail);
-      localStorage.setItem('currentUserPswd', currentUser.userPswd);
+    if ((email == userEmail) && (pswd == userPswd)) {
+      localStorage.setItem('isLoggedIN', "true");
       location.href = "EPLLeague/../homepage.html";
-    }
-    else {
+    } else {
       alertMsg.textContent = "Sign in Failed! Please check details and try again";
       alertBox.classList.add("show");
     }
@@ -149,20 +120,19 @@ function loginPageJS() {
   });
 
   pswd.addEventListener("blur", function () {
-    checkInput(pswd, /^(?=.{8,8}$)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*$/, "Please enter your password", "Please enter valid password");
+    checkInput(pswd, /^(?=.{6,8}$)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*$/, "Please enter your password", "A password must contain atleast 1 Uppercase, 1 Lowercase, 1 number and it's length must be between 6 to 8 charaters");
   });
 }
 
 //function for home page js
 function homePageJS() {
   var logOutBtn = document.querySelector(".logout a");
-  var userEmail = localStorage.getItem('currentUserEmail') ? localStorage.getItem('currentUserEmail') : '';
+  var isLoggedIN = localStorage.getItem('isLoggedIN') ? localStorage.getItem('isLoggedIN') : '';
 
   var readMoreArr = document.querySelectorAll("a[title='Read More']");
 
   //for checking user is logged in or not
-  if (userEmail == '') {
-    alert('You need to login first!');
+  if (isLoggedIN != 'true') {
     location.href = "EPLLeague/../index.html";
   }
 
@@ -171,8 +141,7 @@ function homePageJS() {
 
   //function to logout
   function Logout() {
-    localStorage.removeItem('currentUserEmail');
-    localStorage.removeItem('currentUserPswd');
+    localStorage.removeItem('isLoggedIN');
     location.href = "EPLLeague/../index.html";
   }
 
@@ -293,11 +262,10 @@ function homePageJS() {
 //function for login page js
 function clubListPageJS() {
   var logOutBtn = document.querySelector(".logout a");
-  var userEmail = localStorage.getItem('currentUserEmail') ? localStorage.getItem('currentUserEmail') : '';
+  var isLoggedIN = localStorage.getItem('isLoggedIN') ? localStorage.getItem('isLoggedIN') : '';
 
   //for checking user is logged in or not
-  if (userEmail == '') {
-    alert('You need to login first!');
+  if (isLoggedIN != 'true') {
     location.href = "EPLLeague/../index.html";
   }
 
@@ -306,8 +274,7 @@ function clubListPageJS() {
 
   //function to logout
   function Logout() {
-    localStorage.removeItem('currentUserEmail');
-    localStorage.removeItem('currentUserPswd');
+    localStorage.removeItem('isLoggedIN');
     location.href = "EPLLeague/../index.html";
   }
 
@@ -452,11 +419,10 @@ function clubListPageJS() {
 //function for login page js
 function matchDetailsPageJS() {
   var logOutBtn = document.querySelector(".logout a");
-  var userEmail = localStorage.getItem('currentUserEmail') ? localStorage.getItem('currentUserEmail') : '';
+  var isLoggedIN = localStorage.getItem('isLoggedIN') ? localStorage.getItem('isLoggedIN') : '';
 
   //for checking user is logged in or not
-  if (userEmail == '') {
-    alert('You need to login first!');
+  if (isLoggedIN != 'true') {
     location.href = "EPLLeague/../index.html";
   }
 
@@ -465,8 +431,7 @@ function matchDetailsPageJS() {
 
   //function to logout
   function Logout() {
-    localStorage.removeItem('currentUserEmail');
-    localStorage.removeItem('currentUserPswd');
+    localStorage.removeItem('isLoggedIN');
     location.href = "EPLLeague/../index.html";
   }
 
