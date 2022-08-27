@@ -79,7 +79,7 @@ function loginPageJS() {
   saveData();
 
   //for keeping user log in if he alerady logged in
-  var checkUserEmail = localStorage.getItem('userEmail') ? localStorage.getItem('userEmail') : '';
+  var checkUserEmail = localStorage.getItem('currentUserEmail') ? localStorage.getItem('currentUserEmail') : '';
   if (checkUserEmail != '') {
     location.href = "EPLLeague/../homepage.html";
   }

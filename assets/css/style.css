@@ -900,6 +900,7 @@ form button {
   padding: 0 4%;
   color: #E90152;
   font-size: 20px;
+  font-weight: 600;
 }
 
 .club-name {
@@ -911,7 +912,7 @@ form button {
 
 .cd-score span {
   padding: 0 4%;
-  color: #350138;
+  color: #E90152;
   font-size: 17px;
   font-weight: 600;
   flex-basis: 33.33%;
@@ -923,17 +924,21 @@ form button {
   border: 1px solid transparent;
   color: #350138;
   flex-basis: 33.33%;
+  font-size: 17px;
+  font-weight: 600;
   transition: all .5s ease;
+}
+
+.cd-score span:first-child,
+.cd-score span:last-child {
+  color: #350138;
 }
 
 .cd-score span:first-child {
   text-align: start;
 }
 
-.cd-score span:last-child {
-  text-align: end;
-}
-
+.cd-score span:last-child,
 .cd-score a:last-child {
   text-align: end;
 }
@@ -1661,6 +1666,47 @@ footer {
   }
 
   /*styling for home page end here*/
+  /*____________________________________________*/
+
+  /*____________________________________________*/
+  /*styling for club and match deatils page start here*/
+  .club-info-container,
+  .matches-info-container {
+    padding: 0;
+    padding-bottom: 30px;
+  }
+
+  .cd-heading,
+  .cd-score {
+    padding: 0;
+    margin-bottom: 20px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .cd-heading h4 {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .cd-score span,
+  .cd-score a {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 10px;
+  }
+
+  .cd-score span:first-child,
+  .cd-score span:last-child,
+  .cd-score a:first-child,
+  .cd-score a:last-child {
+    text-align: center;
+  }
+
+  /*styling for club and match deatils page end here*/
   /*____________________________________________*/
 
 }
