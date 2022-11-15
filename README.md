@@ -1,4 +1,4 @@
-This is a demo project. In this project I have tried to make to create a site with information of the English Premier league football. The site will be authenticated and will have users to login in order to see the required information.
+This is a demo project. In this project I have tried to make a site with information of the English Premier league football. The site will be authenticated and will have users to login in order to see the required information.
 
 Tech Stack use :- HTML,CSS,JavaScript,Git.
 
